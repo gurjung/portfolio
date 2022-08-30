@@ -13,7 +13,10 @@ const Main = () => {
           <p className="text-sm tracking-widest text-gray-600 uppercase">
             {TEXTS.INTRO.TITLE}
           </p>
-          <h1 className="py-4 text-gray-700">{TEXTS.INTRO.SUBTITLE}</h1>
+          <h1 className="py-4 text-gray-700">
+            {TEXTS.INTRO.SUBTITLE}{" "}
+            <span className="text-secondary">{TEXTS.FIRST_NAME}</span>
+          </h1>
           <h1 className="py-2 text-gray-700">{TEXTS.INTRO.DESCRIPTION1}</h1>
           <p className="py-4 text-gray-600 sm:max-w-[70%] m-auto">
             {TEXTS.INTRO.DESCRIPTION2}

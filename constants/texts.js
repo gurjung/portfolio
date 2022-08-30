@@ -1,4 +1,5 @@
 export const TEXTS = {
+  FIRST_NAME: "Gurjung",
   NAME: "Gurjung.Singh",
   DEV: "Front-End Developer",
   NAVBAR: {
@@ -10,7 +11,7 @@ export const TEXTS = {
   },
   INTRO: {
     TITLE: "Let's build something legendary together",
-    SUBTITLE: "Hi, I'm Gurjung",
+    SUBTITLE: "Hi, I'm",
     DESCRIPTION1: "A Front-End Web Developer",
     DESCRIPTION2: "Building beautiful and responsive web applications",
   },
