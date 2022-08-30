@@ -114,7 +114,7 @@ const Navbar = () => {
                         <AiOutlineMail />
                       </div>
                     </Link>
-                    <Link href="/resume">
+                    <Link href={TEXTS.SOCIAL.RESUME}>
                       <div className="sidebar-icons">
                         <BsFillPersonLinesFill />
                       </div>

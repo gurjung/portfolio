@@ -56,5 +56,6 @@ export const TEXTS = {
   SOCIAL:{
     GITHUB:"https://github.com/gurjung",
     LINKEDIN: "https://www.linkedin.com/in/gurjung-singh-945731219",
+    RESUME: "https://drive.google.com/file/d/1paDNdVosD42k7_g81Hlh5m-S2wsvuwk0/view?usp=sharing"
   }
 };

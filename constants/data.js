@@ -89,7 +89,7 @@ export const NAVIGATION_DATA = [
   },
   {
     title: TEXTS.NAVBAR.RESUME,
-    url: "/#resume"
+    url: TEXTS.SOCIAL.RESUME
   },{
     title: TEXTS.NAVBAR.CONTACT,
     url: "/#contact"
