@@ -14,4 +14,18 @@ export const TEXTS = {
     DESCRIPTION2: "Building beautiful and responsive web applications",
   },
   CONNECT: "Let's Connect",
+  TECH: {
+    HTML: "HTML5",
+    CSS: "CSS3",
+    JS: "Javascript",
+    REACT: "React",
+    REDUX: "Redux",
+    NEXT: "NEXT JS",
+    MUI: "Material UI",
+    TAILWIND_CSS: "Tailwind CSS",
+    CHART_JS: "Chart.js",
+    FIREBASE: "Firebase",
+  },
+  TECHSTACK: "Tech Stack",
+  CAN_DO: "What I Can Do"
 };
