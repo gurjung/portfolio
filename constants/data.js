@@ -7,7 +7,7 @@ import Tailwind from "../public/assets/skills/tailwind.png";
 import Firebase from "../public/assets/skills/firebase.png";
 import NextJS from "../public/assets/skills/nextjs.png";
 import Redux from "../public/assets/skills/redux.png";
-import MUI from "../public/assets/skills/Mui.png";
+import MUI from "../public/assets/skills/mui.png";
 import ChartJS from "../public/assets/skills/chartjs.png";
 
 export const TECH_STACK = [
