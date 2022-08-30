@@ -9,6 +9,9 @@ import NextJS from "../public/assets/skills/nextjs.png";
 import Redux from "../public/assets/skills/redux.png";
 import MUI from "../public/assets/skills/mui.png";
 import ChartJS from "../public/assets/skills/chartjs.png";
+import Notes from "../public/assets/projects/notes-app.png";
+import Crypto from "../public/assets/projects/crypto-app.png";
+import Covid19 from "../public/assets/projects/covid19-tracker.png";
 
 export const TECH_STACK = [
   {
@@ -50,5 +53,23 @@ export const TECH_STACK = [
   {
     title: TEXTS.TECH.FIREBASE,
     logo: Firebase,
+  },
+];
+
+export const PROJECTS_DATA = [
+  {
+    title: TEXTS.PROJECTS.NOTES_APP,
+    img: Notes,
+    link: "https://notes-sable-pi.vercel.app/",
+  },
+  {
+    title: TEXTS.PROJECTS.COVID_APP,
+    img: Covid19,
+    link: "https://covid19-tracker-vert.vercel.app/",
+  },
+  {
+    title: TEXTS.PROJECTS.CRYPTO_APP,
+    img: Crypto,
+    link: "http://cryptocurrency-tracker-omega.vercel.app/",
   },
 ];

@@ -27,5 +27,13 @@ export const TEXTS = {
     FIREBASE: "Firebase",
   },
   TECHSTACK: "Tech Stack",
-  CAN_DO: "What I Can Do"
+  CAN_DO: "What I Can Do",
+  PROJECT_TITLE: "Projects",
+  PROJECTS: {
+    NOTES_APP: "Notes App",
+    COVID_APP: "Covid19 Tracker",
+    CRYPTO_APP: "Cryptocurrency Tracker",
+  },
+  HAVE_BUILT: "What I've Built",
+  MORE_INFO: "More Info",
 };
