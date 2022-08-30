@@ -1,4 +1,5 @@
 export const TEXTS = {
+  FIRST_NAME: "Gurjung",
   NAME: "Gurjung.Singh",
   DEV: "Front-End Developer",
   NAVBAR: {
@@ -10,7 +11,7 @@ export const TEXTS = {
   },
   INTRO: {
     TITLE: "Let's build something legendary together",
-    SUBTITLE: "Hi, I'm Gurjung",
+    SUBTITLE: "Hi, I'm",
     DESCRIPTION1: "A Front-End Web Developer",
     DESCRIPTION2: "Building beautiful and responsive web applications",
   },
@@ -36,7 +37,7 @@ export const TEXTS = {
     CRYPTO_APP: "Cryptocurrency Tracker",
   },
   HAVE_BUILT: "What I've Built",
-  MORE_INFO: "More Info",
+  DEMO: "Demo",
   CONTACT:{
     TITLE: "Contact",
     IN_TOUCH:"Get In Touch",
@@ -56,5 +57,6 @@ export const TEXTS = {
   SOCIAL:{
     GITHUB:"https://github.com/gurjung",
     LINKEDIN: "https://www.linkedin.com/in/gurjung-singh-945731219",
+    RESUME: "https://drive.google.com/file/d/1paDNdVosD42k7_g81Hlh5m-S2wsvuwk0/view?usp=sharing"
   }
 };

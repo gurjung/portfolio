@@ -81,17 +81,17 @@ export const NAVIGATION_DATA = [
   },
   {
     title: TEXTS.NAVBAR.SKILLS,
-    url: "/skills"
+    url: "/#skills"
   },
   {
     title: TEXTS.NAVBAR.PROJECTS,
-    url: "/projects"
+    url: "/#projects"
   },
   {
     title: TEXTS.NAVBAR.RESUME,
-    url: "/resume"
+    url: TEXTS.SOCIAL.RESUME
   },{
     title: TEXTS.NAVBAR.CONTACT,
-    url: "/contact"
+    url: "/#contact"
   }
 ]
