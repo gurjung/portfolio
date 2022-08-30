@@ -11,7 +11,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide;
+    @apply bg-primary text-tertiary tracking-wide;
   }
 
   h1,
@@ -36,12 +36,12 @@ html {
   }
 
   button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
+    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-secondary to-[#709dff] text-white;
   }
 }
 
 .navbar-menu-item {
-  @apply ml-10 text-sm uppercase hover:border-b;
+  @apply ml-10 text-sm uppercase hover:text-secondary text-tertiary;
 }
 
 .sidebar-menu-item {
@@ -49,5 +49,5 @@ html {
 }
 
 .sidebar-icons{
-  @apply p-3 duration-300 ease-in rounded-full shadow-lg cursor-pointer shadow-gray-400 hover:scale-105;
+  @apply p-3 duration-300 ease-in rounded-full shadow-lg cursor-pointer shadow-gray-400 hover:scale-105 text-tertiary;
 }
