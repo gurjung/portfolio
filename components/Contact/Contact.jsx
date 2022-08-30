@@ -14,10 +14,10 @@ const Contact = () => {
   const formRef = useRef();
   const serviceID = process.env.NEXT_PUBLIC_FORM_SERVICE_ID;
   const templateID = process.env.NEXT_PUBLIC_FORM_TEMPLATE_ID;
-  const publicKey = process.env.NEXT_PUBLIC_FORM_KEY;
+  // const publicKey = process.env.NEXT_PUBLIC_FORM_KEY;
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm(serviceID, templateID, formRef.current, publicKey).then(
+    emailjs.sendForm(serviceID, templateID, formRef.current, "Gfu_INqQ9eCpWU25M").then(
       (result) => {
         console.log(result);
         toast.success(TEXTS.CONTACT.FORM.SUCCESS);
