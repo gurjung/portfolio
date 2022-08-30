@@ -4,9 +4,14 @@ export const TEXTS = {
     HOME: "home",
     SKILLS: "skills",
     PROJECTS: "projects",
-    RESUME: 'resume',
+    RESUME: "resume",
     CONTACT: "contact",
   },
-  INTRO: "Let's build something legendary together",
+  INTRO: {
+    TITLE: "Let's build something legendary together",
+    SUBTITLE: "Hi, I'm Gurjung",
+    DESCRIPTION1: "A Front-End Web Developer",
+    DESCRIPTION2: "Building beautiful and responsive web applications",
+  },
   CONNECT: "Let's Connect",
 };

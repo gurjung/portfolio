@@ -60,7 +60,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="my-4 border-b border-gray-300">
-                  <p className="w-[85%] md:w-[90%] py-3">{TEXTS.INTRO}</p>
+                  <p className="w-[85%] md:w-[90%] py-3">{TEXTS.INTRO.TITLE}</p>
                 </div>
               </div>
               <div className="flex flex-col py-3">
@@ -72,13 +72,17 @@ const Navbar = () => {
                     <li className="sidebar-menu-item">{TEXTS.NAVBAR.SKILLS}</li>
                   </Link>
                   <Link href="/projects">
-                    <li className="sidebar-menu-item">{TEXTS.NAVBAR.PROJECTS}</li>
+                    <li className="sidebar-menu-item">
+                      {TEXTS.NAVBAR.PROJECTS}
+                    </li>
                   </Link>
                   <Link href="/resume">
                     <li className="sidebar-menu-item">{TEXTS.NAVBAR.RESUME}</li>
                   </Link>
                   <Link href="/contact">
-                    <li className="sidebar-menu-item">{TEXTS.NAVBAR.CONTACT}</li>
+                    <li className="sidebar-menu-item">
+                      {TEXTS.NAVBAR.CONTACT}
+                    </li>
                   </Link>
                 </ul>
                 <div className="pt-14">
