@@ -7,4 +7,6 @@ export const TEXTS = {
     RESUME: 'resume',
     CONTACT: "contact",
   },
+  INTRO: "Let's build something legendary together",
+  CONNECT: "Let's Connect",
 };
