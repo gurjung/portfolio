@@ -15,7 +15,7 @@ const Contact = () => {
   const serviceID = process.env.NEXT_PUBLIC_FORM_SERVICE_ID;
   const templateID = process.env.NEXT_PUBLIC_FORM_TEMPLATE_ID;
   const publicKey = process.env.NEXT_PUBLIC_FORM_KEY;
-  console.log(serviceId, templateId, publicKey,"VARIABLES...")
+  console.log(serviceID, templateID, publicKey,"VARIABLES...")
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs.sendForm(serviceID, templateID, formRef.current, "Gfu_INqQ9eCpWU25M").then(
