@@ -1,5 +1,6 @@
 export const TEXTS = {
   NAME: "Gurjung.Singh",
+  DEV: "Front-End Developer",
   NAVBAR: {
     HOME: "home",
     SKILLS: "skills",
@@ -36,4 +37,24 @@ export const TEXTS = {
   },
   HAVE_BUILT: "What I've Built",
   MORE_INFO: "More Info",
+  CONTACT:{
+    TITLE: "Contact",
+    IN_TOUCH:"Get In Touch",
+    AVAILABILITY: "I am available for full-time positions. Contact me and let's talk.",
+    CONNECT: "Connect With Me",
+    FORM:{
+      NAME:"Name",
+      NUMBER: "Phone Number",
+      EMAIL: "Email",
+      SUBJECT: "Subject",
+      MESSAGE: "Message",
+      SUBMIT: "Send Message",
+      SUCCESS: "Email sent successfully",
+      ERROR: "Email not sent",
+    },
+  },
+  SOCIAL:{
+    GITHUB:"https://github.com/gurjung",
+    LINKEDIN: "https://www.linkedin.com/in/gurjung-singh-945731219",
+  }
 };

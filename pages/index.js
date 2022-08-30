@@ -1,8 +1,11 @@
 import Head from "next/head";
-import { Navbar, Main, Skills, Projects } from "../components";
+import { Navbar, Main, Skills, Projects, Contact } from "../components";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
   return (
+    <>
     <div>
       <Head>
         <title>Gurjung Singh | Front-End Developer</title>
@@ -13,6 +16,9 @@ export default function Home() {
       <Main />
       <Skills />
       <Projects />
+      <Contact />
     </div>
+    <ToastContainer autoClose={1000} theme="colored"/>
+    </>
   );
 }
