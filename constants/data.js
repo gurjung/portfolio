@@ -73,3 +73,25 @@ export const PROJECTS_DATA = [
     link: "http://cryptocurrency-tracker-omega.vercel.app/",
   },
 ];
+
+export const NAVIGATION_DATA = [
+  {
+    title: TEXTS.NAVBAR.HOME,
+    url: "/"
+  },
+  {
+    title: TEXTS.NAVBAR.SKILLS,
+    url: "/skills"
+  },
+  {
+    title: TEXTS.NAVBAR.PROJECTS,
+    url: "/projects"
+  },
+  {
+    title: TEXTS.NAVBAR.RESUME,
+    url: "/resume"
+  },{
+    title: TEXTS.NAVBAR.CONTACT,
+    url: "/contact"
+  }
+]
