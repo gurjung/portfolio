@@ -36,7 +36,7 @@ export const TEXTS = {
     CRYPTO_APP: "Cryptocurrency Tracker",
   },
   HAVE_BUILT: "What I've Built",
-  MORE_INFO: "More Info",
+  DEMO: "Demo",
   CONTACT:{
     TITLE: "Contact",
     IN_TOUCH:"Get In Touch",
