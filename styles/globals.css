@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar-menu-item {
+  @apply ml-10 text-sm uppercase hover:border-b;
+}
