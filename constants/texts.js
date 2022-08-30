@@ -4,6 +4,7 @@ export const TEXTS = {
     HOME: "home",
     SKILLS: "skills",
     PROJECTS: "projects",
+    RESUME: 'resume',
     CONTACT: "contact",
   },
 };
