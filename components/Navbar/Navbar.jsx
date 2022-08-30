@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { TEXTS } from "../../constants";
+import { TEXTS, NAVIGATION_DATA } from "../../constants";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -14,21 +14,11 @@ const Navbar = () => {
         <p className="text-[#5651e5]">{TEXTS.NAME}</p>
         <div>
           <ul className="hidden md:flex">
-            <Link href="/">
-              <li className="navbar-menu-item">{TEXTS.NAVBAR.HOME}</li>
-            </Link>
-            <Link href="/skills">
-              <li className="navbar-menu-item">{TEXTS.NAVBAR.SKILLS}</li>
-            </Link>
-            <Link href="/projects">
-              <li className="navbar-menu-item">{TEXTS.NAVBAR.PROJECTS}</li>
-            </Link>
-            <Link href="/resume">
-              <li className="navbar-menu-item">{TEXTS.NAVBAR.RESUME}</li>
-            </Link>
-            <Link href="/contact">
-              <li className="navbar-menu-item">{TEXTS.NAVBAR.CONTACT}</li>
-            </Link>
+            {NAVIGATION_DATA.map((nav) => (
+              <Link key={nav.title} href={nav.url}>
+                <li className="navbar-menu-item">{nav.title}</li>
+              </Link>
+            ))}
           </ul>
           <div onClick={handleNav} className="cursor-pointer md:hidden">
             <AiOutlineMenu size={25} />
@@ -65,25 +55,11 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col py-3">
                 <ul className="uppercase">
-                  <Link href="/">
-                    <li className="sidebar-menu-item">{TEXTS.NAVBAR.HOME}</li>
-                  </Link>
-                  <Link href="/skills">
-                    <li className="sidebar-menu-item">{TEXTS.NAVBAR.SKILLS}</li>
-                  </Link>
-                  <Link href="/projects">
-                    <li className="sidebar-menu-item">
-                      {TEXTS.NAVBAR.PROJECTS}
-                    </li>
-                  </Link>
-                  <Link href="/resume">
-                    <li className="sidebar-menu-item">{TEXTS.NAVBAR.RESUME}</li>
-                  </Link>
-                  <Link href="/contact">
-                    <li className="sidebar-menu-item">
-                      {TEXTS.NAVBAR.CONTACT}
-                    </li>
-                  </Link>
+                  {NAVIGATION_DATA.map((nav) => (
+                    <Link key={nav.title} href={nav.url}>
+                      <li className="sidebar-menu-item">{nav.title}</li>
+                    </Link>
+                  ))}
                 </ul>
                 <div className="pt-14">
                   <p className="uppercase tracking-widest text-[#5651e5]">
@@ -91,7 +67,7 @@ const Navbar = () => {
                   </p>
                   <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                     <a
-                      href="https://www.linkedin.com/in/gurjung-singh-945731219"
+                      href={TEXTS.SOCIAL.LINKEDIN}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -100,7 +76,7 @@ const Navbar = () => {
                       </div>
                     </a>
                     <a
-                      href="https://github.com/gurjung"
+                      href={TEXTS.SOCIAL.GITHUB}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
