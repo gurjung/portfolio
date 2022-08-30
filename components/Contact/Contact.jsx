@@ -12,22 +12,25 @@ import { TEXTS } from "../../constants";
 
 const Contact = () => {
   const formRef = useRef();
-  const serviceID = process.env.NEXT_PUBLIC_FORM_SERVICE_ID;
-  const templateID = process.env.NEXT_PUBLIC_FORM_TEMPLATE_ID;
-  const publicKey = process.env.NEXT_PUBLIC_FORM_KEY;
-  console.log(serviceID, templateID, publicKey,"VARIABLES...")
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm(serviceID, templateID, formRef.current, "Gfu_INqQ9eCpWU25M").then(
-      (result) => {
-        console.log(result);
-        toast.success(TEXTS.CONTACT.FORM.SUCCESS);
-      },
-      (error) => {
-        console.log(error.text);
-        toast.error(TEXTS.CONTACT.FORM.ERROR);
-      }
-    );
+    emailjs
+      .sendForm(
+        "service_9n079dg",
+        "template_vppwp0s",
+        formRef.current,
+        "Gfu_INqQ9eCpWU25M"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          toast.success(TEXTS.CONTACT.FORM.SUCCESS);
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error(TEXTS.CONTACT.FORM.ERROR);
+        }
+      );
   };
   return (
     <div id="contact" className="w-full lg:h-screen">
