@@ -12,43 +12,53 @@ import ChartJS from "../../public/assets/skills/chartjs.png";
 
 export const SKILLS_DATA: readonly Skill[] = [
   {
-    title: "HTML5",
-    logo: Html,
-  },
-  {
-    title: "CSS3",
-    logo: Css,
-  },
-  {
-    title: "JavaScript",
-    logo: Javascript,
-  },
-  {
     title: "React",
     logo: ReactJS,
-  },
-  {
-    title: "Redux",
-    logo: Redux,
-  },
-  {
-    title: "Material UI",
-    logo: MUI,
-  },
-  {
-    title: "Tailwind CSS",
-    logo: Tailwind,
-  },
-  {
-    title: "Chart.js",
-    logo: ChartJS,
+    category: "Core Frontend",
   },
   {
     title: "Next.js",
     logo: NextJS,
+    category: "Core Frontend",
+  },
+  {
+    title: "JavaScript",
+    logo: Javascript,
+    category: "Core Frontend",
+  },
+  {
+    title: "HTML5",
+    logo: Html,
+    category: "Core Frontend",
+  },
+  {
+    title: "CSS3",
+    logo: Css,
+    category: "Core Frontend",
+  },
+  {
+    title: "Redux",
+    logo: Redux,
+    category: "State & Architecture",
+  },
+  {
+    title: "Tailwind CSS",
+    logo: Tailwind,
+    category: "Styling & UI",
+  },
+  {
+    title: "Material UI",
+    logo: MUI,
+    category: "Styling & UI",
+  },
+  {
+    title: "Chart.js",
+    logo: ChartJS,
+    category: "Visualization & Cloud",
   },
   {
     title: "Firebase",
     logo: Firebase,
+    category: "Visualization & Cloud",
   },
 ] as const;
