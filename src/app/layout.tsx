@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={raleway.variable}>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         {children}
         <ToastProvider />
       </body>
