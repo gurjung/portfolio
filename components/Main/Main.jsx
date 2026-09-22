@@ -45,11 +45,15 @@ const Main = () => {
                 <AiOutlineMail />
               </div>
             </Link>
-            <Link href={TEXTS.SOCIAL.RESUME}>
+            <a
+              href={TEXTS.SOCIAL.RESUME}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="p-6 duration-300 ease-in rounded-full shadow-lg cursor-pointer shadow-gray-400 hover:scale-110">
                 <BsFillPersonLinesFill />
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

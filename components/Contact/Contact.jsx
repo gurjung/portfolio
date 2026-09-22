@@ -47,7 +47,7 @@ const Contact = () => {
                 <Image
                   className="rounded-xl hover:scale-105 ease-in duration-300"
                   src={ContactImg}
-                  alt="/"
+                  alt="Contact Gurjung Singh"
                 />
               </div>
               <div>
@@ -76,11 +76,15 @@ const Contact = () => {
                       <FaGithub />
                     </div>
                   </a>
-                  <Link href={TEXTS.SOCIAL.RESUME}>
+                  <a
+                    href={TEXTS.SOCIAL.RESUME}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <BsFillPersonLinesFill />
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

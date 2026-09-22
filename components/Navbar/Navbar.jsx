@@ -32,9 +32,11 @@ const Navbar = () => {
         <div>
           <ul className="hidden md:flex">
             {NAVIGATION_DATA.map((nav) => (
-              <Link key={nav.title} href={nav.url}>
-                <li className="navbar-menu-item">{nav.title}</li>
-              </Link>
+              <li key={nav.title} className="navbar-menu-item">
+                <Link href={nav.url}>
+                  {nav.title}
+                </Link>
+              </li>
             ))}
           </ul>
           <div onClick={handleNav} className="cursor-pointer md:hidden">
@@ -73,14 +75,15 @@ const Navbar = () => {
               <div className="flex flex-col py-3">
                 <ul className="uppercase">
                   {NAVIGATION_DATA.map((nav) => (
-                    <Link key={nav.title} href={nav.url}>
-                      <li
-                        onClick={() => setIsNavOpen(false)}
-                        className="sidebar-menu-item"
-                      >
+                    <li
+                      key={nav.title}
+                      onClick={() => setIsNavOpen(false)}
+                      className="sidebar-menu-item"
+                    >
+                      <Link href={nav.url}>
                         {nav.title}
-                      </li>
-                    </Link>
+                      </Link>
+                    </li>
                   ))}
                 </ul>
                 <div className="pt-14">
@@ -114,11 +117,15 @@ const Navbar = () => {
                         <AiOutlineMail />
                       </div>
                     </Link>
-                    <Link href={TEXTS.SOCIAL.RESUME}>
+                    <a
+                      href={TEXTS.SOCIAL.RESUME}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <div className="sidebar-icons">
                         <BsFillPersonLinesFill />
                       </div>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
