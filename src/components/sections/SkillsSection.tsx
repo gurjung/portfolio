@@ -9,9 +9,10 @@ import type { SkillCategory } from "@/types";
 const CATEGORIES: readonly (SkillCategory | "All")[] = [
   "All",
   "Core Frontend",
-  "State & Architecture",
+  "State & Data",
   "Styling & UI",
-  "Visualization & Cloud",
+  "Backend & Database",
+  "Cloud & Platforms",
 ] as const;
 
 export function SkillsSection() {
@@ -27,7 +28,7 @@ export function SkillsSection() {
       <SectionHeading
         eyebrow="Tech Stack"
         title="Skills & Technologies"
-        description="Core technical capabilities developed through 3+ years of building production-grade frontend applications."
+        description="Comprehensive technical toolkit specialized in modern frontend engineering, scalable state architecture, and full-stack integration."
       />
 
       {/* Category Filter Tabs */}
@@ -62,13 +63,19 @@ export function SkillsSection() {
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 mb-4 flex items-center justify-center p-2 rounded-xl bg-surface-muted/60 group-hover:bg-surface-muted group-hover:scale-105 transition-all duration-300">
-              <Image
-                src={skill.logo}
-                alt={`${skill.title} logo`}
-                width={56}
-                height={56}
-                className="object-contain max-h-12 w-auto group-hover:drop-shadow-sm transition-all duration-300"
-              />
+              {skill.logo ? (
+                <Image
+                  src={skill.logo}
+                  alt={`${skill.title} logo`}
+                  width={56}
+                  height={56}
+                  className="object-contain max-h-12 w-auto group-hover:drop-shadow-sm transition-all duration-300"
+                />
+              ) : (
+                <div className="flex items-center justify-center">
+                  {skill.icon}
+                </div>
+              )}
             </div>
 
             <h3 className="text-sm sm:text-base font-semibold text-text-primary tracking-tight">
