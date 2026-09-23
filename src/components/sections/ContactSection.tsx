@@ -1,173 +1,136 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { FiCheck, FiCopy, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
-import ContactImg from "../../../public/assets/contact.jpg";
 import { siteConfig } from "@/config";
-import { useContactForm } from "@/hooks";
 import { SectionHeading, SocialIconLink } from "@/components/common";
 
 export function ContactSection() {
-  const { formRef, isSubmitting, handleSubmit } = useContactForm();
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(siteConfig.email);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2500);
+    } catch {
+      // Fallback
+    }
+  };
 
   return (
-    <section id="contact" className="w-full py-20 px-4">
-      <div className="max-w-[1240px] mx-auto w-full">
-        <SectionHeading eyebrow="Contact" title="Get In Touch" />
+    <section id="contact" className="w-full py-24 px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto">
+      <SectionHeading
+        eyebrow="Contact"
+        title="Get In Touch"
+        description="Whether you have an open frontend software engineering position or want to discuss a project, my inbox is always open."
+      />
 
-        <div className="grid lg:grid-cols-5 gap-8">
-          {/* Left info card */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-6 bg-primary flex flex-col justify-between">
-            <div>
-              <div className="overflow-hidden rounded-xl">
-                <Image
-                  className="rounded-xl hover:scale-105 transition-transform duration-300 w-full h-auto object-cover"
-                  src={ContactImg}
-                  alt={`Contact ${siteConfig.name}`}
-                  priority={false}
-                />
-              </div>
-              <div className="mt-6">
-                <h3 className="text-2xl font-bold text-tertiary">
-                  {siteConfig.name}
-                </h3>
-                <p className="text-secondary font-medium text-base mt-1">
-                  {siteConfig.role}
-                </p>
-                <p className="py-4 text-gray-600 text-sm sm:text-base leading-relaxed">
-                  {siteConfig.availability}
-                </p>
-              </div>
-            </div>
+      {/* Modern Centered Developer Contact Card */}
+      <div className="max-w-2xl mx-auto bg-surface rounded-3xl border border-border-subtle p-8 sm:p-12 text-center shadow-sm relative overflow-hidden">
+        {/* Subtle top glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-primary/10 blur-3xl pointer-events-none -z-10" />
 
-            <div className="pt-6 border-t border-gray-300 mt-6">
-              <p className="uppercase tracking-widest text-secondary text-sm font-semibold mb-4">
-                Connect With Me
-              </p>
-              <div className="flex items-center space-x-6">
-                <SocialIconLink
-                  href={siteConfig.links.linkedin}
-                  ariaLabel="LinkedIn Profile"
-                  icon={<FaLinkedinIn size={20} />}
-                  isExternal
-                  size="md"
-                />
-                <SocialIconLink
-                  href={siteConfig.links.github}
-                  ariaLabel="GitHub Profile"
-                  icon={<FaGithub size={20} />}
-                  isExternal
-                  size="md"
-                />
-                <SocialIconLink
-                  href={siteConfig.links.resume}
-                  ariaLabel="View Resume"
-                  icon={<BsFillPersonLinesFill size={20} />}
-                  isExternal
-                  size="md"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right form card */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl p-6 sm:p-8 bg-primary">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4 w-full">
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="user_name"
-                    className="uppercase text-xs font-semibold text-gray-600 pb-2"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="user_name"
-                    name="user_name"
-                    type="text"
-                    required
-                    placeholder="Your name"
-                    className="border-2 rounded-lg p-3 border-gray-300 focus:border-secondary focus:outline-none transition-colors"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="user_email"
-                    className="uppercase text-xs font-semibold text-gray-600 pb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="user_email"
-                    name="user_email"
-                    type="email"
-                    required
-                    placeholder="Your email address"
-                    className="border-2 rounded-lg p-3 border-gray-300 focus:border-secondary focus:outline-none transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col">
-                <label
-                  htmlFor="user_subject"
-                  className="uppercase text-xs font-semibold text-gray-600 pb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  id="user_subject"
-                  name="user_subject"
-                  type="text"
-                  required
-                  placeholder="Subject of inquiry"
-                  className="border-2 rounded-lg p-3 border-gray-300 focus:border-secondary focus:outline-none transition-colors"
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <label
-                  htmlFor="message"
-                  className="uppercase text-xs font-semibold text-gray-600 pb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  required
-                  placeholder="Your message..."
-                  className="border-2 rounded-lg p-3 border-gray-300 focus:border-secondary focus:outline-none transition-colors resize-y"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full p-4 text-white font-semibold uppercase tracking-wider rounded-xl shadow-lg shadow-gray-400 bg-gradient-to-r from-secondary to-[#709dff] hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 mt-4 cursor-pointer"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
-            </form>
-          </div>
+        {/* Mail Icon Avatar */}
+        <div className="w-16 h-16 rounded-2xl bg-surface-muted border border-border-subtle flex items-center justify-center mx-auto mb-6 shadow-sm">
+          <FiMail className="w-7 h-7 text-primary" />
         </div>
 
-        {/* Back to top button */}
-        <div className="flex justify-center py-12">
-          <Link
-            href="/"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            aria-label="Back to top"
+        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary">
+          {siteConfig.name}
+        </h3>
+        <p className="text-base font-semibold text-primary mt-1">
+          {siteConfig.role}
+        </p>
+
+        <p className="mt-4 text-text-secondary text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
+          {siteConfig.availability}
+        </p>
+
+        {/* Quick Email Buttons */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-hover active:scale-95 transition-all shadow-md shadow-primary/20 cursor-pointer"
           >
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 active:scale-95 duration-300 ease-in text-secondary hover:bg-white transition-all">
-              <HiOutlineChevronDoubleUp size={28} />
-            </div>
-          </Link>
+            <FiSend className="w-4 h-4" />
+            <span>Send an Email</span>
+          </a>
+
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-border-default hover:border-text-primary bg-surface hover:bg-surface-elevated text-text-primary font-medium text-sm transition-all active:scale-95 shadow-sm cursor-pointer"
+            title="Copy email address"
+          >
+            {copiedEmail ? (
+              <>
+                <FiCheck className="w-4 h-4 text-emerald-500" />
+                <span className="text-emerald-500 font-semibold">Copied!</span>
+              </>
+            ) : (
+              <>
+                <FiCopy className="w-4 h-4 text-text-secondary" />
+                <span>Copy Email</span>
+              </>
+            )}
+          </button>
         </div>
+
+        {/* Location & Timezone info */}
+        <div className="mt-6 inline-flex items-center gap-2 text-xs sm:text-sm text-text-muted">
+          <FiMapPin className="w-4 h-4 text-primary shrink-0" />
+          <span>India (IST) • Open to Remote & Relocation</span>
+        </div>
+
+        {/* Social Links Row */}
+        <div className="pt-8 border-t border-border-subtle mt-8 flex flex-col items-center">
+          <p className="text-xs uppercase tracking-wider text-text-muted font-semibold mb-4">
+            Connect With Me
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <SocialIconLink
+              href={siteConfig.links.linkedin}
+              ariaLabel="LinkedIn Profile"
+              icon={<FaLinkedinIn size={18} />}
+              isExternal
+              size="md"
+            />
+            <SocialIconLink
+              href={siteConfig.links.github}
+              ariaLabel="GitHub Profile"
+              icon={<FaGithub size={18} />}
+              isExternal
+              size="md"
+            />
+            <SocialIconLink
+              href={siteConfig.links.resume}
+              ariaLabel="View Resume"
+              icon={<BsFillPersonLinesFill size={18} />}
+              isExternal
+              size="md"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Back to top button & footer note */}
+      <div className="flex flex-col items-center justify-center pt-16 pb-8 gap-4 border-t border-border-subtle mt-16">
+        <Link
+          href="/#home"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="p-3 rounded-full border border-border-subtle hover:border-primary/40 bg-surface hover:bg-surface-elevated text-text-secondary hover:text-primary transition-all duration-200 shadow-sm hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+        >
+          <HiOutlineChevronDoubleUp size={20} />
+        </Link>
+        <p className="text-xs text-text-muted">
+          Designed & Built by {siteConfig.name} • {new Date().getFullYear()}
+        </p>
       </div>
     </section>
   );

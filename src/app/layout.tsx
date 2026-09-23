@@ -1,20 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Raleway } from "next/font/google";
+import { Inter } from "next/font/google";
 import { siteConfig } from "@/config";
 import { ToastProvider } from "@/components/common";
 import "./globals.css";
 
-const raleway = Raleway({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-raleway",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | ${siteConfig.role}`,
-  description: siteConfig.description,
+  description: `${siteConfig.description} Specializing in React, TypeScript, Next.js, and scalable frontend architecture.`,
   authors: [{ name: siteConfig.name, url: siteConfig.links.github }],
   creator: siteConfig.name,
+  keywords: [
+    "Gurjung Singh",
+    "Frontend Software Engineer",
+    "Frontend Developer",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Web Development",
+    "Tailwind CSS",
+  ],
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.role}`,
     description: siteConfig.description,
@@ -27,7 +37,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5651e5",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#090d16" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -38,8 +51,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={raleway.variable}>
-      <body className="antialiased" suppressHydrationWarning>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var isDark = stored ? (stored === 'dark') : prefersDark;
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased font-sans bg-canvas text-text-primary selection:bg-primary/20">
         {children}
         <ToastProvider />
       </body>

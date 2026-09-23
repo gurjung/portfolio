@@ -1,2 +1,2 @@
 export * from "./useScrollShadow";
-export * from "./useContactForm";
+export * from "./useTheme";

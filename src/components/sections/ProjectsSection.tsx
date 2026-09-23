@@ -1,49 +1,97 @@
 import Image from "next/image";
+import { FiExternalLink } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 import { PROJECTS_DATA } from "@/data";
 import { SectionHeading } from "@/components/common";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-20 px-4">
-      <div className="max-w-[1240px] mx-auto">
-        <SectionHeading
-          eyebrow="Projects"
-          title="What I've Built"
-        />
+    <section id="projects" className="w-full py-24 px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto">
+      <SectionHeading
+        eyebrow="Projects"
+        title="Featured Work"
+        description="A selection of frontend and full-stack applications highlighting real-time state management, API integrations, and modern architecture."
+      />
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {PROJECTS_DATA.map((project) => (
-            <div
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+        {PROJECTS_DATA.map((project) => {
+          const isGithubLink = project.link.includes("github.com");
+
+          return (
+            <article
               key={project.title}
-              className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl group hover:bg-gradient-to-r from-secondary to-[#709dff] overflow-hidden transition-all duration-300"
+              className="group flex flex-col bg-surface rounded-2xl border border-border-subtle hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl overflow-hidden relative"
             >
-              <Image
-                src={project.img}
-                alt={project.title}
-                className="rounded-xl group-hover:opacity-10 transition-opacity duration-300 w-full h-auto object-cover"
-              />
+              {/* Featured Badge for DevBoard */}
+              {project.title === "DevBoard" && (
+                <div className="absolute top-3 right-3 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-primary text-white shadow-sm z-10">
+                  Featured
+                </div>
+              )}
 
-              <div className="hidden group-hover:flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-[90%] p-4 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-white tracking-wider mb-2">
-                  {project.title}
-                </h3>
-                {project.techStack && (
-                  <p className="pb-4 pt-1 text-white/90 text-sm font-medium">
-                    {project.techStack.join(" • ")}
-                  </p>
-                )}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2.5 rounded-lg bg-white text-gray-700 font-bold text-base hover:bg-gray-100 hover:scale-105 active:scale-95 transition-transform duration-200 shadow-md inline-block"
-                >
-                  Live Demo
-                </a>
+              {/* Project Image Preview */}
+              <div className="relative aspect-video w-full overflow-hidden bg-surface-muted border-b border-border-subtle">
+                <Image
+                  src={project.img}
+                  alt={`${project.title} preview`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            </div>
-          ))}
-        </div>
+
+              {/* Project Details */}
+              <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 className="text-xl font-bold tracking-tight text-text-primary group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+
+                  {project.description && (
+                    <p className="mt-2.5 text-sm text-text-secondary leading-relaxed">
+                      {project.description}
+                    </p>
+                  )}
+
+                  {/* Tech Stack Pills */}
+                  {project.techStack && (
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-surface-muted text-text-secondary border border-border-subtle"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Action Button & Status */}
+                <div className="pt-6 mt-6 border-t border-border-subtle flex items-center justify-between">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-white font-medium text-xs sm:text-sm hover:bg-primary-hover active:scale-95 transition-all shadow-sm shadow-primary/20 cursor-pointer"
+                  >
+                    <span>{isGithubLink ? "View on GitHub" : "Live Demo"}</span>
+                    {isGithubLink ? (
+                      <FaGithub className="w-3.5 h-3.5" />
+                    ) : (
+                      <FiExternalLink className="w-3.5 h-3.5" />
+                    )}
+                  </a>
+
+                  <span className="text-xs text-text-muted font-medium">
+                    {project.status || "Deployed on Vercel"}
+                  </span>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
