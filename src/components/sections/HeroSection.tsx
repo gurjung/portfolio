@@ -37,7 +37,9 @@ export function HeroSection() {
 
         {/* Professional Summary */}
         <p className="text-base sm:text-lg text-text-secondary max-w-[680px] mx-auto leading-relaxed mb-10">
-          Frontend Software Engineer with 3+ years of experience specializing in React.js, TypeScript, Next.js, and modern frontend architecture. Focused on building high-performance, accessible, and production-grade web applications.
+          Building fast, scalable, and accessible web applications with React,
+          TypeScript, and Next.js — with a focus on performance and frontend
+          architecture.
         </p>
 
         {/* Action CTAs */}

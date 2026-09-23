@@ -5,6 +5,7 @@ export type SkillCategory =
   | "Core Frontend"
   | "State & Data"
   | "Styling & UI"
+  | "Testing"
   | "Backend & Database"
   | "Cloud & Platforms";
 

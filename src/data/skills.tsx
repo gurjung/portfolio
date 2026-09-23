@@ -12,6 +12,8 @@ import {
   SiExpress,
   SiMongodb,
   SiPostgresql,
+  SiJest,
+  SiTestinglibrary,
 } from "react-icons/si";
 
 import Html from "../../public/assets/skills/html.png";
@@ -106,6 +108,18 @@ export const SKILLS_DATA: readonly Skill[] = [
     title: "Material UI",
     logo: MUI,
     category: "Styling & UI",
+  },
+
+  // Testing
+  {
+    title: "Jest",
+    icon: <SiJest className="w-10 h-10 text-[#C21325]" />,
+    category: "Testing",
+  },
+  {
+    title: "React Testing Library",
+    icon: <SiTestinglibrary className="w-10 h-10 text-[#E33332]" />,
+    category: "Testing",
   },
 
   // Backend & Database

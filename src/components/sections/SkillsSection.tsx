@@ -11,6 +11,7 @@ const CATEGORIES: readonly (SkillCategory | "All")[] = [
   "Core Frontend",
   "State & Data",
   "Styling & UI",
+  "Testing",
   "Backend & Database",
   "Cloud & Platforms",
 ] as const;
