@@ -91,11 +91,14 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <div className="pt-2 border-t border-[var(--border-color)] flex items-center justify-between text-xs font-mono text-[var(--text-muted)]">
-            <span>{personal.statusBadge}</span>
+          <div className="pt-3 border-t border-[var(--border-color)] flex flex-col gap-2 text-xs font-mono text-[var(--text-muted)]">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-green)] shrink-0 animate-pulse" />
+              <span>{personal.statusBadge}</span>
+            </div>
             <a
               href={`mailto:${personal.email}`}
-              className="text-[var(--accent-blue)] font-bold"
+              className="text-[var(--accent-blue)] font-bold hover:underline"
             >
               {personal.email}
             </a>

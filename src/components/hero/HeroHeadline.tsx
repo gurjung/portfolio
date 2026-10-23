@@ -11,8 +11,8 @@ export function HeroHeadline() {
   return (
     <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
       {/* Eyebrow Tag */}
-      <div className="font-mono text-[9.5px] sm:text-[11px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-5 text-center lg:text-left flex items-center justify-center lg:justify-start gap-2 max-w-[92vw] flex-wrap sm:flex-nowrap">
-        <span className="w-2 h-2 rounded-full bg-[var(--accent-blue)] shrink-0" />
+      <div className="font-mono text-[9.5px] sm:text-[11px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-5 text-center lg:text-left max-w-[92vw]">
+        <span className="inline-block w-2 h-2 rounded-full bg-[var(--accent-blue)] mr-2 align-middle -translate-y-[0.5px]" />
         <span>{personal.eyebrow}</span>
       </div>
 
