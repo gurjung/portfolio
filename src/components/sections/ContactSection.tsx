@@ -23,7 +23,10 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto">
+    <section
+      id="contact"
+      className="w-full py-24 px-4 sm:px-6 lg:px-8 max-w-[1240px] mx-auto"
+    >
       <SectionHeading
         eyebrow="Contact"
         title="Get In Touch"
@@ -84,7 +87,7 @@ export function ContactSection() {
         {/* Location & Timezone info */}
         <div className="mt-6 inline-flex items-center gap-2 text-xs sm:text-sm text-text-muted">
           <FiMapPin className="w-4 h-4 text-primary shrink-0" />
-          <span>India (IST) • Open to Remote & Relocation</span>
+          <span>India (IST)</span>
         </div>
 
         {/* Social Links Row */}

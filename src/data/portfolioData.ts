@@ -34,8 +34,8 @@ export const portfolioData = {
     headlineAccent: "crafted for speed.",
     intro:
       "I'm Gurjung Singh, a Frontend Engineer passionate about building deterministic, high-performance web applications, real-time event interfaces, accessible design systems, and modern AI-driven interfaces (integrating LLM APIs, with workflows extending across RAG, Vector DBs, and LangGraph) that scale to thousands of daily users.",
-    statusBadge: "AVAILABLE FOR SDE-2 ROLES",
-    location: "India (IST) · Remote / Hybrid",
+    statusBadge: "AVAILABLE FOR SOFTWARE ENGINEERING ROLES",
+    location: "India (IST)",
     email: "gurjung997@gmail.com",
     phone: "+91-9779917710",
     links: {
@@ -351,8 +351,8 @@ export const portfolioData = {
   ],
 
   recruiterHub: {
-    targetRoles: "Senior Frontend Engineer / SDE-2",
-    primaryLocation: "India (IST) · Remote / Hybrid",
+    targetRoles: "Frontend / Full Stack Engineer",
+    primaryLocation: "India (IST)",
     coreSpecialization:
       "Scalable Web Architecture, Design Systems & AI/LLM Frontends",
     experienceLevel: "3+ Years Production Scale",

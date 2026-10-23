@@ -25,11 +25,14 @@ export const metadata: Metadata = {
     "Gurjung Singh",
     "Frontend Software Engineer",
     "Senior Frontend Engineer",
-    "React 19",
+    "Software Engineer",
+    "Frontend Engineer",
+    "Software Developer",
+    "React",
     "TypeScript",
-    "Next.js App Router",
+    "Next.js",
     "Logistics Dashboard",
-    "Contact Center CCaaS",
+    "Contact Center",
     "Twilio Flex",
     "Tailwind CSS",
   ],
@@ -84,9 +87,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen" suppressHydrationWarning>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

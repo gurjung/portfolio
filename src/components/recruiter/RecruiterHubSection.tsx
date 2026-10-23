@@ -73,15 +73,6 @@ export function RecruiterHubSection() {
                 {recruiterHub.experienceLevel}
               </strong>
             </div>
-
-            <div className="bg-[var(--bg-card-subtle)] border border-[var(--border-color)] p-3 rounded-md sm:col-span-2">
-              <span className="block font-mono text-[10px] text-[var(--text-muted)] font-bold uppercase tracking-wider mb-1">
-                ACADEMIC CREDENTIALS
-              </span>
-              <strong className="text-[var(--text-main)] font-[750]">
-                {recruiterHub.education}
-              </strong>
-            </div>
           </div>
 
           {/* CTA Actions */}
@@ -98,7 +89,7 @@ export function RecruiterHubSection() {
             </a>
 
             <a
-              href={`mailto:${personal.email}`}
+              href={`mailto:${personal.email}?subject=Interview%20Inquiry%20%7C%20Software%20Engineering%20Role%20-%20Gurjung%20Singh`}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-md text-[13px] font-[750] bg-[var(--bg-card)] text-[var(--text-main)] border border-[var(--border-color)] hover:border-[var(--border-strong)] hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Schedule Recruiter Call</span>
@@ -119,8 +110,7 @@ export function RecruiterHubSection() {
             Have Custom Screening Questions?
           </h3>
           <p className="text-[12.5px] text-[var(--text-muted)] leading-[1.6] max-w-[340px] mb-5">
-            Gurjung AI Assistant is powered by LLM API integration, answering
-            queries grounded in his architectural decisions and background.
+            Ask anything about Gurjung&apos;s architectural decisions, real-time event interfaces, production metrics, or technical leadership.
           </p>
           <a
             href="#top"
