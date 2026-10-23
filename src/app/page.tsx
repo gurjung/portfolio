@@ -4,6 +4,10 @@ import { TechTicker } from "@/components/TechTicker";
 import { ImpactLedger } from "@/components/ImpactLedger";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { ArchitecturePipeline } from "@/components/pipeline/ArchitecturePipeline";
+import { ExperienceSection } from "@/components/experience/ExperienceSection";
+import { SkillsSection } from "@/components/skills/SkillsSection";
+import { RecruiterHubSection } from "@/components/recruiter/RecruiterHubSection";
+import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -15,7 +19,11 @@ export default function HomePage() {
         <ImpactLedger />
         <ProjectsSection />
         <ArchitecturePipeline />
+        <ExperienceSection />
+        <SkillsSection />
+        <RecruiterHubSection />
       </main>
+      <Footer />
     </div>
   );
 }
