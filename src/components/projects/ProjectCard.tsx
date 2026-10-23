@@ -5,16 +5,16 @@ import { Project } from '@/data/portfolioData';
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-7 shadow-[var(--card-shadow)] flex flex-col justify-between hover:border-[var(--border-strong)] hover:-translate-y-1 transition-all duration-200">
+    <article className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-5 sm:p-7 shadow-[var(--card-shadow)] flex flex-col justify-between hover:border-[var(--border-strong)] hover:-translate-y-1 transition-all duration-200">
       
       {/* Top Details */}
       <div className="mb-5">
         {/* Category & Client Tag Row */}
-        <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex flex-wrap sm:flex-nowrap items-start sm:items-center justify-between gap-2 mb-4">
           <span className="bg-[rgba(36,76,255,0.1)] border border-[rgba(36,76,255,0.25)] text-[var(--accent-blue)] px-2.5 py-1 rounded text-[10px] font-mono font-bold tracking-wider uppercase">
             {project.category}
           </span>
-          <span className="font-mono text-[11px] text-[var(--text-muted)] font-semibold">
+          <span className="font-mono text-[11px] text-[var(--text-muted)] font-semibold shrink-0">
             {project.client}
           </span>
         </div>

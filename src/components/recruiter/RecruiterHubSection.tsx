@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { FiMail, FiArrowUpRight } from "react-icons/fi";
 import { portfolioData } from "@/data/portfolioData";
 
 export function RecruiterHubSection() {
@@ -16,28 +17,28 @@ export function RecruiterHubSection() {
 
   return (
     <section
-      className="w-[min(1340px,calc(100%-48px))] mx-auto py-20"
+      className="w-[min(1340px,calc(100%-32px))] sm:w-[min(1340px,calc(100%-48px))] mx-auto py-16 sm:py-20 scroll-mt-20"
       id="recruiter-hub"
     >
-      <div className="bg-[var(--bg-card)] border-2 border-[var(--border-strong)] rounded-xl p-8 sm:p-10 shadow-[var(--card-shadow)] grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-center transition-colors duration-200">
+      <div className="bg-[var(--bg-card)] border-2 border-[var(--border-strong)] rounded-xl p-5 sm:p-8 lg:p-10 shadow-[var(--card-shadow)] grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-10 items-center transition-colors duration-200">
         {/* Left Column: Essential Parameters & Resume Action */}
-        <div>
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
             <span>HR &amp; TALENT ACQUISITION CONSOLE</span>
           </div>
 
-          <h2 className="text-[28px] sm:text-[34px] font-[850] tracking-[-0.04em] text-[var(--text-main)] mb-3 leading-tight">
+          <h2 className="text-[26px] sm:text-[32px] lg:text-[34px] font-[850] tracking-[-0.04em] text-[var(--text-main)] mb-3 leading-tight">
             The One-Stop Recruiter Snapshot
           </h2>
 
-          <p className="text-[14px] text-[var(--text-muted)] leading-[1.6] max-w-[520px] mb-6">
+          <p className="text-[14px] text-[var(--text-muted)] leading-[1.6] max-w-[520px] mb-6 mx-auto lg:mx-0">
             Evaluating Gurjung for your engineering team? Here are the essential
             parameters at a glance.
           </p>
 
           {/* Recruiter Meta Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7 text-[13px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7 text-[13px] w-full text-left">
             <div className="bg-[var(--bg-card-subtle)] border border-[var(--border-color)] p-3 rounded-md">
               <span className="block font-mono text-[10px] text-[var(--text-muted)] font-bold uppercase tracking-wider mb-1">
                 TARGET ROLES
@@ -76,24 +77,24 @@ export function RecruiterHubSection() {
           </div>
 
           {/* CTA Actions */}
-          <div className="flex items-center gap-3.5 flex-wrap">
+          <div className="flex items-center justify-center lg:justify-start gap-3.5 flex-wrap w-full">
             <a
               href={`/resume/${recruiterHub.resumeFileName}`}
               target="_blank"
               rel="noopener noreferrer"
               download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-md text-[13px] font-[750] bg-[var(--border-strong)] text-[var(--bg-card)] border border-[var(--border-strong)] hover:bg-[var(--accent-blue)] hover:border-[var(--accent-blue)] hover:text-white hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md text-[13px] font-[750] bg-[var(--border-strong)] text-[var(--bg-card)] border border-[var(--border-strong)] hover:bg-[var(--accent-blue)] hover:border-[var(--accent-blue)] hover:text-white hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Download Resume (PDF)</span>
-              <span>↗</span>
+              <FiArrowUpRight className="w-[18px] h-[18px] shrink-0" />
             </a>
 
             <a
               href={`mailto:${personal.email}?subject=Interview%20Inquiry%20%7C%20Software%20Engineering%20Role%20-%20Gurjung%20Singh`}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-md text-[13px] font-[750] bg-[var(--bg-card)] text-[var(--text-main)] border border-[var(--border-color)] hover:border-[var(--border-strong)] hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md text-[13px] font-[750] bg-[var(--bg-card)] text-[var(--text-main)] border border-[var(--border-color)] hover:border-[var(--border-strong)] hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Schedule Recruiter Call</span>
-              <span>✉</span>
+              <FiMail className="w-5 h-5 shrink-0 text-[var(--accent-blue)]" />
             </a>
           </div>
         </div>

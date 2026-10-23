@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — Frontend Engineer | Logistics & CCaaS`,
+  title: `${siteConfig.name} — Frontend Engineer`,
   description: `${siteConfig.description} Specializing in React, TypeScript, Next.js, and high-scale logistics & contact center frontends.`,
   authors: [{ name: siteConfig.name, url: siteConfig.links.github }],
   creator: siteConfig.name,

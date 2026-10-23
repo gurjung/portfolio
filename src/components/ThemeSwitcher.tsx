@@ -8,7 +8,7 @@ export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
 
   const options: Array<{ id: Theme; label: string; icon: string; title: string }> = [
-    { id: 'swiss', label: 'White', icon: '☀️', title: 'Clean Swiss Minimalist' },
+    { id: 'swiss', label: 'Porcelain', icon: '⚪', title: 'Refined Porcelain Minimalist' },
     { id: 'paper', label: 'Paper', icon: '📜', title: 'Signature Warm Paper Editorial' },
     { id: 'carbon', label: 'Carbon', icon: '🌙', title: 'Dark Cyber Cockpit' },
   ];

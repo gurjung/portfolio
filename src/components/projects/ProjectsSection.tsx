@@ -1,28 +1,26 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { portfolioData } from '@/data/portfolioData';
-import { ProjectCard } from './ProjectCard';
+import React from "react";
+import { portfolioData } from "@/data/portfolioData";
+import { ProjectCard } from "./ProjectCard";
 
 export function ProjectsSection() {
   const { featuredProjects } = portfolioData;
 
   return (
-    <section className="w-[min(1340px,calc(100%-48px))] mx-auto py-20" id="work">
+    <section
+      className="w-[min(1340px,calc(100%-48px))] mx-auto py-20 scroll-mt-20"
+      id="work"
+    >
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-        <div>
-          <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
-            <span>FEATURED PROJECTS</span>
-          </div>
-          <h2 className="text-[clamp(32px,4vw,48px)] font-[850] tracking-[-0.05em] text-[var(--text-main)] leading-none">
-            Real Products.<br />Measurable Impact.
-          </h2>
+      <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-2 mb-10">
+        <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
+          <span>FEATURED PROJECTS</span>
         </div>
-        <p className="max-w-[480px] text-[14px] leading-[1.65] text-[var(--text-muted)]">
-          From consolidating enterprise logistics tools to building real-time communication platforms and full-stack SaaS architectures, here are the core products I've engineered.
-        </p>
+        <h2 className="text-[clamp(28px,4vw,48px)] font-[850] tracking-[-0.05em] text-[var(--text-main)] leading-tight">
+          Real Products. Measurable Impact.
+        </h2>
       </div>
 
       {/* Projects 2-Column Grid */}

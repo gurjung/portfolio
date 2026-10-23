@@ -11,17 +11,17 @@ export function ArchitecturePipeline() {
     interactivePipeline.find((s) => s.id === activeStageId) || interactivePipeline[0];
 
   return (
-    <section className="w-full py-16 bg-[var(--bg-card-subtle)] border-y border-[var(--border-color)] transition-colors duration-200" id="pipeline">
+    <section className="w-full py-16 bg-[var(--bg-card-subtle)] border-y border-[var(--border-color)] transition-colors duration-200 scroll-mt-20" id="pipeline">
       <div className="w-[min(1340px,calc(100%-48px))] mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
-          <div>
+        <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-left gap-3 mb-6">
+          <div className="flex flex-col items-center lg:items-start">
             <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
               <span>ARCHITECTURE IN ACTION</span>
             </div>
-            <h2 className="text-[26px] sm:text-[30px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[30px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
               From Schema Ingestion to Production Delivery
             </h2>
           </div>
@@ -72,7 +72,7 @@ export function ArchitecturePipeline() {
         </div>
 
         {/* Live Telemetry Display Box */}
-        <div className="bg-[var(--bg-card)] border border-[var(--accent-blue)] rounded-lg p-5 px-6 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-[var(--bg-card)] border border-[var(--accent-blue)] rounded-lg p-4 sm:p-5 sm:px-6 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h4 className="text-[15px] font-[850] text-[var(--text-main)] mb-1 uppercase tracking-tight">
               {activeStage.stageNumber}: {activeStage.title} ENGINE

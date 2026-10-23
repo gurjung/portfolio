@@ -7,16 +7,16 @@ export function SkillsSection() {
   const { skillsMatrix } = portfolioData;
 
   return (
-    <section className="w-full py-16 bg-[var(--bg-card-subtle)] border-y border-[var(--border-color)] transition-colors duration-200" id="skills">
+    <section className="w-full py-16 bg-[var(--bg-card-subtle)] border-y border-[var(--border-color)] transition-colors duration-200 scroll-mt-20" id="skills">
       <div className="w-[min(1340px,calc(100%-32px))] sm:w-[min(1340px,calc(100%-48px))] mx-auto">
         
         {/* Section Header */}
-        <div className="mb-8">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left mb-8">
           <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
             <span>TECHNICAL ARSENAL</span>
           </div>
-          <h2 className="text-[26px] sm:text-[30px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
+          <h2 className="text-[24px] sm:text-[28px] lg:text-[30px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
             Tools of the Trade &amp; Engineering Standards
           </h2>
         </div>

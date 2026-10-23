@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  
+  --font-sans:
+    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono:
+    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+
   --color-canvas: var(--bg-page);
   --color-surface: var(--bg-card);
   --color-surface-subtle: var(--bg-card-subtle);
@@ -23,50 +27,50 @@
 :root,
 html[data-theme="paper"] {
   color-scheme: light;
-  --bg-page: #F4F0E8;
-  --bg-card: #FFFDF8;
-  --bg-card-subtle: #ECE8DE;
+  --bg-page: #f4f0e8;
+  --bg-card: #fffdf8;
+  --bg-card-subtle: #ece8de;
   --text-main: #151619;
-  --text-muted: #5C5D62;
-  --border-color: #D9D5CC;
+  --text-muted: #5c5d62;
+  --border-color: #d9d5cc;
   --border-strong: #151619;
-  --accent-blue: #244CFF;
-  --accent-lime: #D9FF39;
-  --accent-orange: #FF6847;
-  --accent-green: #22C55E;
-  --card-shadow: 6px 6px 0px #D9D5CC;
+  --accent-blue: #244cff;
+  --accent-lime: #d9ff39;
+  --accent-orange: #ff6847;
+  --accent-green: #22c55e;
+  --card-shadow: 6px 6px 0px #d9d5cc;
 }
 
 html[data-theme="carbon"] {
   color-scheme: dark;
-  --bg-page: #0C0D12;
+  --bg-page: #0c0d12;
   --bg-card: #141620;
-  --bg-card-subtle: #1C1F2E;
-  --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
-  --border-color: #26293B;
-  --border-strong: #3B82F6;
-  --accent-blue: #3B82F6;
-  --accent-lime: #10B981;
-  --accent-orange: #F97316;
-  --accent-green: #10B981;
+  --bg-card-subtle: #1c1f2e;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #26293b;
+  --border-strong: #3b82f6;
+  --accent-blue: #3b82f6;
+  --accent-lime: #10b981;
+  --accent-orange: #f97316;
+  --accent-green: #10b981;
   --card-shadow: 6px 6px 0px #060709;
 }
 
 html[data-theme="swiss"] {
   color-scheme: light;
-  --bg-page: #FFFFFF;
-  --bg-card: #F9FAFB;
-  --bg-card-subtle: #F3F4F6;
-  --text-main: #0A0A0A;
-  --text-muted: #4B5563;
-  --border-color: #E5E7EB;
-  --border-strong: #0A0A0A;
-  --accent-blue: #0284C7;
-  --accent-lime: #84CC16;
-  --accent-orange: #EA580C;
-  --accent-green: #16A34A;
-  --card-shadow: 6px 6px 0px #E5E7EB;
+  --bg-page: #ffffff;
+  --bg-card: #f9fafb;
+  --bg-card-subtle: #f3f4f6;
+  --text-main: #0a0a0a;
+  --text-muted: #4b5563;
+  --border-color: #e5e7eb;
+  --border-strong: #0a0a0a;
+  --accent-blue: #0284c7;
+  --accent-lime: #84cc16;
+  --accent-orange: #ea580c;
+  --accent-green: #16a34a;
+  --card-shadow: 6px 6px 0px #e5e7eb;
 }
 
 /* ==========================================================================
@@ -81,18 +85,24 @@ body {
   color: var(--text-main);
   font-family: var(--font-sans);
   min-height: 100vh;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background-color: var(--accent-blue);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

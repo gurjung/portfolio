@@ -7,12 +7,14 @@ export function ImpactLedger() {
   const { executiveMetrics } = portfolioData;
 
   return (
-    <section className="w-[min(1340px,calc(100%-48px))] mx-auto py-14 border-b border-[var(--border-color)] transition-colors duration-200" id="impact">
+    <section className="w-[min(1340px,calc(100%-48px))] mx-auto py-14 border-b border-[var(--border-color)] transition-colors duration-200 scroll-mt-20" id="impact">
       
       {/* Section Eyebrow */}
-      <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-5">
-        <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
-        <span>PROVEN METRICS // MEASURABLE BUSINESS OUTCOMES</span>
+      <div className="flex justify-center lg:justify-start mb-5">
+        <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
+          <span>PROVEN METRICS // MEASURABLE BUSINESS OUTCOMES</span>
+        </div>
       </div>
 
       {/* 5-Card Metrics Grid */}
