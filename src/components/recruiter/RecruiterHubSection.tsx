@@ -104,7 +104,7 @@ export function RecruiterHubSection() {
             Have Custom Screening Questions?
           </h3>
           <p className="text-[12.5px] text-[var(--text-muted)] leading-[1.6] max-w-[340px] mb-5">
-            Gurjung's interactive AI assistant is trained on his full background, performance philosophy, and real architectural decisions.
+            Gurjung AI Assistant is trained on his full background, performance philosophy, and real architectural decisions.
           </p>
           <a
             href="#top"

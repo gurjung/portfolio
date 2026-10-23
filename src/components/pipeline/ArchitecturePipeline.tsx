@@ -43,7 +43,7 @@ export function ArchitecturePipeline() {
         </div>
 
         {/* 4 Clickable Stage Waypoints */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-6">
           {interactivePipeline.map((stage) => {
             const isActive = stage.id === activeStageId;
             return (

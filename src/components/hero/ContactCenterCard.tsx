@@ -4,20 +4,20 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const promptResponses: Record<string, string> = {
   stack:
-    "Gurjung's production stack centers on React 19, Next.js (App Router), TypeScript, Tailwind CSS, Redux Toolkit, and TanStack Query. On the backend, he works with Node.js, Express, PostgreSQL, and Prisma.",
+    "Gurjung's core production stack centers on React 19, Next.js (App Router), TypeScript, Tailwind CSS, Redux Toolkit, and TanStack Query. On the backend, he works with Node.js, Express, PostgreSQL, and Prisma.",
   bjs:
-    "At BJS Home Delivery, Gurjung consolidated 5 disparate internal logistics tools into a single platform for 2,000+ users, cutting tool-switching by 30%, automating invoicing for 6,000+ daily peak deliveries, and shrinking JS bundles by 60–75%.",
+    "At BJS Home Delivery, Gurjung consolidated 5 disparate internal tools into a unified React platform for 2,000+ users, cutting tool-switching by 30%, automating daily operational debriefing, and shrinking JS bundle footprints by 60–75%.",
   ccaas:
-    "Gurjung engineered agent-facing interfaces on Twilio Flex and Zoom Contact Center, centralizing Calls, SMS, and WhatsApp. This omnichannel approach directly drove a 50% reduction in customer response latency.",
+    "Gurjung engineered agent-facing interfaces on Twilio Flex and Zoom Contact Center, centralizing Calls, SMS, and WhatsApp into low-latency event streams. This directly drove a 50% reduction in customer response latency.",
   devboard:
     "DevBoard is Gurjung's multi-tenant project management platform featuring Next.js App Router, Prisma ORM, PostgreSQL, defense-in-depth RBAC, tokenized invitations, and drag-and-drop Kanban task views.",
   hire:
-    "Gurjung brings 3+ years of battle-tested frontend systems engineering with proven business metrics (-50% latency, 6K+ daily fulfillment scale), rigorous TypeScript discipline, and deep domain expertise in logistics and CCaaS.",
+    "Gurjung brings 3+ years of battle-tested frontend systems engineering with proven business metrics (-50% latency, 2K+ daily users), rigorous TypeScript discipline, and deep expertise in scalable dashboards and design systems.",
 };
 
 export function ContactCenterCard() {
   const [displayText, setDisplayText] = useState<string>(
-    "Hi! I'm Gurjung's interactive AI assistant. Click any prompt below or ask about his experience in logistics systems, contact centers, or frontend architecture."
+    "Hi! I'm Gurjung — AI Assistant. Ask anything about frontend architecture, state management, performance engineering, or project achievements."
   );
   const [isTyping, setIsTyping] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>('');
@@ -25,9 +25,9 @@ export function ContactCenterCard() {
 
   const chips = [
     { id: 'stack', label: '⚡ Core Tech Stack' },
-    { id: 'bjs', label: '🚚 BJS Logistics Impact' },
-    { id: 'ccaas', label: '🎧 CCaaS & Twilio Flex' },
-    { id: 'devboard', label: '💼 DevBoard Architecture' },
+    { id: 'bjs', label: '🏗️ Enterprise Scale Impact' },
+    { id: 'ccaas', label: '🔄 Real-Time WebSockets & Telephony' },
+    { id: 'devboard', label: '💼 DevBoard SaaS Architecture' },
     { id: 'hire', label: '⭐ Why hire Gurjung?' },
   ];
 
@@ -36,16 +36,18 @@ export function ContactCenterCard() {
     setIsTyping(true);
     setDisplayText('');
 
+    let current = '';
     let index = 0;
     typingTimerRef.current = setInterval(() => {
       if (index < fullText.length) {
-        setDisplayText((prev) => prev + fullText.charAt(index));
+        current += fullText.charAt(index);
+        setDisplayText(current);
         index++;
       } else {
         if (typingTimerRef.current) clearInterval(typingTimerRef.current);
         setIsTyping(false);
       }
-    }, 14);
+    }, 12);
   };
 
   useEffect(() => {
@@ -66,9 +68,9 @@ export function ContactCenterCard() {
 
     if (query.includes('stack') || query.includes('skill')) {
       streamText(promptResponses.stack);
-    } else if (query.includes('bjs') || query.includes('logistic') || query.includes('delivery')) {
+    } else if (query.includes('bjs') || query.includes('enterprise') || query.includes('scale') || query.includes('tool')) {
       streamText(promptResponses.bjs);
-    } else if (query.includes('ccaas') || query.includes('contact') || query.includes('twilio') || query.includes('zoom')) {
+    } else if (query.includes('ccaas') || query.includes('contact') || query.includes('twilio') || query.includes('websocket') || query.includes('telephony')) {
       streamText(promptResponses.ccaas);
     } else if (query.includes('devboard') || query.includes('project') || query.includes('saas')) {
       streamText(promptResponses.devboard);
@@ -76,7 +78,7 @@ export function ContactCenterCard() {
       streamText(promptResponses.hire);
     } else {
       streamText(
-        `Recorded inquiry: "${inputValue}". Gurjung specializes in sub-100ms React/Next.js architectures, real-time telephony, and scalable logistics platforms. Contact him directly at gurjung997@gmail.com for deeper specifics.`
+        `Recorded inquiry: "${inputValue}". Gurjung specializes in sub-100ms React/Next.js architectures, real-time event interfaces, and scalable enterprise platforms. Reach him directly at gurjung997@gmail.com for deeper technical discussion.`
       );
     }
     setInputValue('');
@@ -91,7 +93,7 @@ export function ContactCenterCard() {
           <span className="bg-[var(--accent-green)] text-black text-[9px] font-mono px-1.5 py-0.5 rounded font-extrabold uppercase">
             LIVE
           </span>
-          <span>Contact Center &amp; AI Operator</span>
+          <span>RECRUITER COPILOT // AI TERMINAL</span>
         </div>
 
         {/* Animated Equalizer Waveform */}
@@ -104,14 +106,14 @@ export function ContactCenterCard() {
       </div>
 
       {/* Streaming Chat Output Window */}
-      <div className="bg-[#1C1E23] border border-[#2B2E36] rounded-md p-3 min-h-[105px] max-h-[145px] overflow-y-auto text-[12px] leading-[1.55] text-slate-200">
+      <div className="bg-[#1C1E23] border border-[#2B2E36] rounded-md p-3 min-h-[105px] max-h-[155px] overflow-y-auto text-[12px] leading-[1.55] text-slate-200">
         <div className="flex gap-2.5 items-start">
           <div className="w-6 h-6 rounded bg-[var(--accent-blue)] flex items-center justify-center font-extrabold text-[10px] text-white shrink-0 mt-0.5">
             AI
           </div>
           <div>
             <strong className="block text-[10px] font-mono text-slate-400 mb-1">
-              DISPATCHER ASSISTANT // READY
+              ENGINEERING COPILOT // READY
             </strong>
             <span>{displayText}</span>
             {isTyping && (
@@ -121,14 +123,14 @@ export function ContactCenterCard() {
         </div>
       </div>
 
-      {/* Predefined Recruiter Question Chips */}
-      <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none" role="toolbar" aria-label="Quick questions">
+      {/* Predefined Recruiter Question Chips (Clean multi-row wrap for full mobile visibility) */}
+      <div className="flex flex-wrap gap-1.5 py-1" role="toolbar" aria-label="Quick questions">
         {chips.map((chip) => (
           <button
             key={chip.id}
             type="button"
             onClick={() => handleChipClick(chip.id)}
-            className="bg-[#252830] border border-[#383B46] text-slate-300 hover:bg-[var(--accent-blue)] hover:text-white hover:border-[var(--accent-blue)] px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap transition-colors duration-150 cursor-pointer"
+            className="bg-[#252830] border border-[#383B46] text-slate-300 hover:bg-[var(--accent-blue)] hover:text-white hover:border-[var(--accent-blue)] px-2.5 py-1 rounded-full text-[11px] font-semibold transition-colors duration-150 cursor-pointer"
           >
             {chip.label}
           </button>
@@ -141,8 +143,8 @@ export function ContactCenterCard() {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Ask anything about Gurjung's background..."
-          className="flex-1 bg-[#21242B] border border-[#353842] rounded px-3 py-1.5 text-white font-sans text-[12px] focus:outline-none focus:border-[var(--accent-blue)] placeholder:text-slate-500"
+          placeholder="Ask anything about Gurjung..."
+          className="flex-1 min-w-0 bg-[#21242B] border border-[#353842] rounded px-3 py-1.5 text-white font-sans text-[12px] focus:outline-none focus:border-[var(--accent-blue)] placeholder:text-slate-500"
         />
         <button
           type="submit"

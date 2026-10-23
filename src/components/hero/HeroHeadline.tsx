@@ -16,7 +16,7 @@ export function HeroHeadline() {
       </div>
 
       {/* Main Editorial Headline */}
-      <h1 className="text-[clamp(48px,6vw,84px)] font-[850] leading-[0.93] tracking-[-0.06em] text-[var(--text-main)] mb-6">
+      <h1 className="text-[clamp(36px,5.5vw,78px)] font-[850] leading-[0.93] tracking-[-0.06em] text-[var(--text-main)] mb-6">
         {personal.headlineLine1}<br />
         {personal.headlineLine2}<br />
         <span className="relative inline-block text-white px-2.5 pb-1 z-10 mt-1">

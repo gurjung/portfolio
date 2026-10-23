@@ -4,11 +4,11 @@ import React from 'react';
 
 export function LogisticsRouteMap() {
   return (
-    <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-4 shadow-[var(--card-shadow)] relative overflow-hidden transition-colors duration-200">
+    <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-3.5 sm:p-4 shadow-[var(--card-shadow)] relative overflow-hidden transition-colors duration-200">
       
       {/* Visual Header */}
       <div className="flex justify-between items-center font-mono text-[10px] font-bold text-[var(--text-muted)] mb-3">
-        <span>CONNECTED OPERATIONS // 01</span>
+        <span>CLIENT ARCHITECTURE &amp; DATA FLOW // 01</span>
         <div className="inline-flex items-center gap-1.5 text-[9px] font-extrabold text-[var(--accent-green)] uppercase bg-[rgba(34,197,94,0.12)] px-2 py-0.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-green)] animate-pulse" />
           <span>Systems Online</span>
@@ -16,84 +16,84 @@ export function LogisticsRouteMap() {
       </div>
 
       {/* Stylized SVG Map Container */}
-      <div className="bg-[var(--bg-card-subtle)] rounded-md relative p-3.5 h-[175px] flex items-center justify-center overflow-hidden">
+      <div className="bg-[var(--bg-card-subtle)] rounded-md relative p-2 sm:p-4 min-h-[220px] sm:h-[220px] flex flex-col justify-between overflow-hidden">
         <svg
-          className="w-full h-full"
-          viewBox="0 0 540 180"
+          className="w-full h-[140px] sm:h-[160px]"
+          viewBox="0 0 600 160"
           fill="none"
           role="img"
-          aria-label="Interactive stylized distribution route connecting warehouse, in transit, and doorstep delivery"
+          aria-label="Interactive client-side data pipeline connecting complex logic, real-time sync, and seamless UI"
         >
           <defs>
             <pattern id="routeGrid" width="28" height="28" patternUnits="userSpaceOnUse">
-              <path d="M 28 0 L 0 0 0 28" fill="none" stroke="currentColor" strokeOpacity="0.07" strokeWidth="1" />
+              <path d="M 28 0 L 0 0 0 28" fill="none" stroke="currentColor" strokeOpacity="0.06" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#routeGrid)" />
 
-          {/* Dotted Supply Chain Line */}
+          {/* Dotted Supply Chain Line flowing across top and arcing to bottom right */}
           <path
-            d="M 60 70 C 140 70, 160 130, 240 130 S 340 50, 420 80 S 480 140, 500 140"
+            d="M 120 42 C 200 42, 240 68, 330 68 S 440 108, 520 108"
             stroke="var(--accent-blue)"
             strokeWidth="3"
             strokeDasharray="6 6"
             fill="none"
           />
 
-          {/* Point 1: Warehouse */}
-          <circle cx="60" cy="70" r="8" fill="var(--bg-card)" stroke="var(--accent-blue)" strokeWidth="3" />
+          {/* Point 1: Complex Logic (Positioned cleanly on top-left) */}
+          <circle cx="120" cy="42" r="8" fill="var(--bg-card)" stroke="var(--accent-blue)" strokeWidth="3" />
           <text
-            x="50"
-            y="50"
+            x="60"
+            y="24"
             fontFamily="var(--font-mono)"
             fontSize="10"
             fontWeight="700"
             fill="currentColor"
           >
-            ● WAREHOUSE
+            ● COMPLEX LOGIC
           </text>
 
-          {/* Point 2: In Transit */}
-          <circle cx="240" cy="130" r="7" fill="var(--accent-orange)" stroke="#FFFFFF" strokeWidth="2" />
+          {/* Point 2: Real-time Sync (Positioned cleanly in upper-middle) */}
+          <circle cx="330" cy="68" r="7" fill="var(--accent-orange)" stroke="#FFFFFF" strokeWidth="2" />
           <text
-            x="228"
-            y="155"
+            x="280"
+            y="94"
             fontFamily="var(--font-mono)"
             fontSize="10"
             fontWeight="700"
             fill="var(--accent-orange)"
           >
-            ● IN TRANSIT
+            ● REAL-TIME SYNC
           </text>
 
-          {/* Point 3: Customer Delivery */}
-          <circle cx="500" cy="140" r="8" fill="var(--bg-card)" stroke="var(--accent-blue)" strokeWidth="3" />
+          {/* Point 3: Seamless UI (Positioned on bottom-right) */}
+          <circle cx="520" cy="108" r="8" fill="var(--bg-card)" stroke="var(--accent-blue)" strokeWidth="3" />
           <text
-            x="440"
-            y="165"
+            x="455"
+            y="134"
             fontFamily="var(--font-mono)"
             fontSize="10"
             fontWeight="700"
             fill="currentColor"
           >
-            ● DELIVERY
+            ● SEAMLESS UI
           </text>
         </svg>
 
-        {/* Real-time Fleet Tracking Floating Badge */}
-        <div className="absolute bottom-2.5 left-3.5 bg-[#151619]/92 backdrop-blur-md text-white p-2.5 px-3.5 rounded-md text-[11px] border border-white/10 max-w-[260px] shadow-lg">
+        {/* High-Throughput Client Engine Floating Badge (Placed bottom-left with zero overlap) */}
+        <div className="relative sm:absolute sm:bottom-2.5 sm:left-3 mt-2 sm:mt-0 bg-[#151619]/95 backdrop-blur-md text-white p-2.5 px-3.5 rounded-md text-[11px] border border-white/10 max-w-full sm:max-w-[270px] shadow-lg z-10">
           <span className="block text-[9px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-0.5">
-            REAL-TIME FLEET TRACKING ↗
+            HIGH-THROUGHPUT CLIENT ENGINE ↗
           </span>
-          <strong className="block text-[12px] font-extrabold text-white">
-            Multiple stops. One platform.
+          <strong className="block text-[12px] font-extrabold text-white leading-tight">
+            Deterministic state. Zero layout shift.
           </strong>
-          <div className="flex gap-4 mt-1 font-mono text-[10px] text-slate-400">
+          <div className="flex gap-4 mt-1.5 font-mono text-[10px] text-slate-400">
             <div>
-              <b className="text-[var(--accent-lime)] text-[12px]">−30%</b> Switching time
+              <b className="text-[var(--accent-lime)] text-[12px]">−75%</b> Bundle footprint
             </div>
             <div>
-              <b className="text-[var(--accent-lime)] text-[12px]">6K+</b> Deliveries/day
+              <b className="text-[var(--accent-lime)] text-[12px]">2K+</b> Concurrent users
             </div>
           </div>
         </div>

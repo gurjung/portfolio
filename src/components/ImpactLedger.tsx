@@ -17,10 +17,12 @@ export function ImpactLedger() {
 
       {/* 5-Card Metrics Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {executiveMetrics.map((item) => (
+        {executiveMetrics.map((item, idx) => (
           <div
             key={item.id}
-            className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-5 shadow-[var(--card-shadow)] hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between"
+            className={`bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-5 shadow-[var(--card-shadow)] hover:-translate-y-1 transition-transform duration-200 flex flex-col justify-between ${
+              idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+            }`}
           >
             <div>
               <div
