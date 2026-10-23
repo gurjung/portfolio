@@ -21,7 +21,7 @@ export function ProjectsSection() {
           </h2>
         </div>
         <p className="max-w-[480px] text-[14px] leading-[1.65] text-[var(--text-muted)]">
-          From consolidating internal supply chain tools to building enterprise contact center workflows, here are the core platforms I've engineered.
+          From consolidating enterprise logistics tools to building real-time communication platforms and full-stack SaaS architectures, here are the core products I've engineered.
         </p>
       </div>
 

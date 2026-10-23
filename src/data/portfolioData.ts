@@ -101,15 +101,15 @@ export const portfolioData = {
 
   featuredProjects: [
     {
-      id: "bjs-logistics",
-      title: "Delivery & Transport Management Platform",
-      category: "ENTERPRISE CORE // LOGISTICS",
+      id: "delivery-management",
+      title: "Delivery Management Platform",
+      category: "ENTERPRISE PLATFORM // FULFILLMENT & INVOICING",
       client: "BJS HOME DELIVERY",
       description:
-        "Architected a modular NPM-package-based frontend that consolidated 5 disparate internal logistics tools into a unified operating cockpit. Streamlined automated invoicing and daily debriefing for 2,000+ users.",
+        "Architected a modular frontend consolidating legacy tools into a unified operating cockpit. Streamlined automated invoicing and daily debriefing for 2,000+ users.",
       highlights: [
         "Automated invoicing debrief pipeline: ACTIVE",
-        "Shared accessible component library: +30% dev velocity",
+        "Zero data loss under peak load: 6,000+ daily deliveries",
         "Bundle footprint: Sub-85kb entry budget achieved",
       ],
       stackBadge: "React 19 / TypeScript / Modular NPM / REST",
@@ -120,9 +120,28 @@ export const portfolioData = {
       ],
     },
     {
+      id: "transport-management",
+      title: "Transport Management Platform",
+      category: "FLEET & ROUTING ENGINE // TRANSPORT SYSTEMS",
+      client: "BJS HOME DELIVERY",
+      description:
+        "Engineered vehicle route planning and transport telemetry interfaces, enabling dynamic dispatch coordination and real-time operational tracking.",
+      highlights: [
+        "Fleet routing & tracking module: OPERATIONAL",
+        "Driver debrief & transport coordination: ACTIVE",
+        "Optimized state synchronization across modules",
+      ],
+      stackBadge: "React / TypeScript / State Machines / REST",
+      metrics: [
+        { label: "System Scale", value: "Enterprise" },
+        { label: "Latency", value: "<100ms" },
+        { label: "Uptime", value: "99.9%" },
+      ],
+    },
+    {
       id: "ccaas-flex",
       title: "Omnichannel Contact Center Workflows",
-      category: "CCaaS // REAL-TIME TELEPHONY",
+      category: "REAL-TIME STREAMING // CCaaS & TELEPHONY",
       client: "TWILIO FLEX & ZOOM",
       description:
         "Engineered high-concurrency agent-facing interfaces on Twilio-Flex and Zoom Contact Center, centralizing live calls, SMS, and WhatsApp customer communication into an ultra-low latency response hub.",
@@ -141,7 +160,7 @@ export const portfolioData = {
     {
       id: "devboard-saas",
       title: "DevBoard Multi-Tenant Platform",
-      category: "FULL STACK SAAS // PRODUCTIVITY",
+      category: "FULL STACK SAAS // MULTI-TENANT ARCHITECTURE",
       client: "PERSONAL PRODUCT",
       description:
         "Architected a multi-tenant project management platform with Next.js App Router, PostgreSQL, and Prisma. Implemented RBAC defense-in-depth authorization, cursor-based pagination, and unified Kanban/Table task views.",
@@ -158,12 +177,12 @@ export const portfolioData = {
       ],
     },
     {
-      id: "enterprise-ui",
-      title: "Enterprise UI Component Engine",
-      category: "DESIGN SYSTEM // INFRASTRUCTURE",
+      id: "reusable-component-library",
+      title: "Reusable Component Library",
+      category: "DESIGN SYSTEM // ACCESSIBILITY & STANDARDS",
       client: "ENTERPRISE SYSTEM",
       description:
-        "Built a standardized NPM component system with built-in accessibility (WCAG AA compliance, semantic HTML, keyboard focus management) adopted across frontend squads to eliminate redundant code.",
+        "Built a standardized NPM component system with built-in accessibility (WCAG 2.1 AA compliance, semantic HTML, keyboard focus management) adopted across frontend squads to eliminate redundant code.",
       highlights: [
         "Accessible primitives: Dialogs, tables, drawers, forms",
         "Frontend engineering sprint effort: −30% reduction",
@@ -181,39 +200,39 @@ export const portfolioData = {
   interactivePipeline: [
     {
       id: 1,
-      stageNumber: "01 // INTAKE",
-      title: "Order Ingestion",
+      stageNumber: "01 // INGESTION",
+      title: "Schema Validation",
       subtitle: "Zod + Strict TypeScript",
       truckPosition: "12%",
       description:
-        "Enforces runtime JSON schema contracts with Zod and TypeScript. Prevents data corruption before events hit the dispatch queue across 6,000+ daily deliveries.",
+        "Enforces runtime JSON schema validation with Zod and TypeScript. Eliminates corrupt payloads and prevents runtime state drift across thousands of daily operations.",
       telemetryTag: "STATUS: 100% TYPE-SAFE",
     },
     {
       id: 2,
       stageNumber: "02 // STREAMING",
-      title: "Streaming Highway",
+      title: "State Hydration",
       subtitle: "WebSockets + React Query",
       truckPosition: "38%",
       description:
-        "Real-time WebSocket event ingestion and TanStack Query state hydration. Keeps route updates synchronized at 60 frames per second.",
+        "Real-time event ingestion and TanStack Query state cache synchronization, maintaining sub-50ms data updates without unnecessary re-renders.",
       telemetryTag: "LATENCY: <50MS",
     },
     {
       id: 3,
-      stageNumber: "03 // CCaaS TELEPHONY",
-      title: "Contact Center Hub",
-      subtitle: "Twilio Flex + Queue Logic",
+      stageNumber: "03 // CONCURRENCY",
+      title: "Event Orchestration",
+      subtitle: "Queues & State Machines",
       truckPosition: "64%",
       description:
-        "Live telephony queues, agent presence matrices, and automated ticket prioritization. Reduced customer response time by 50% across Voice, SMS, and WhatsApp.",
+        "High-concurrency event stream handling, queue prioritization matrices, and debounced mutations ensuring zero dropped updates under peak load.",
       telemetryTag: "CHANNELS: VOICE + SMS + WA",
     },
     {
       id: 4,
-      stageNumber: "04 // CLIENT DOORSTEP",
-      title: "60fps Delivery",
-      subtitle: "Virtualization + 0.000 CLS",
+      stageNumber: "04 // CLIENT RENDER",
+      title: "Optimized Interface",
+      subtitle: "Virtualization + Zero CLS",
       truckPosition: "88%",
       description:
         "Optimized DOM virtualization, bundle reduction of 60–75%, and sub-100ms Total Blocking Time (TBT). Zero Cumulative Layout Shift at final delivery.",

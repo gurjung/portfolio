@@ -22,15 +22,15 @@ export function ArchitecturePipeline() {
               <span>ARCHITECTURE IN ACTION</span>
             </div>
             <h2 className="text-[26px] sm:text-[30px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
-              From Schema Intake to 60fps Doorstep
+              From Schema Ingestion to Production Delivery
             </h2>
           </div>
           <span className="font-mono text-[11px] font-bold text-[var(--text-muted)]">
-            [CLICK ANY WAYPOINT TO DRIVE ROUTE]
+            [CLICK ANY WAYPOINT TO TEST FLOW]
           </span>
         </div>
 
-        {/* Highway Track with Moving Truck */}
+        {/* Highway Track with Moving Speed Pulse */}
         <div className="bg-[#1E293B] h-10 rounded-full relative my-7 flex items-center border-2 border-[#0F172A] overflow-visible">
           <div className="absolute left-4 right-4 h-0 border-t-2 border-dashed border-[var(--accent-lime)]" />
           <div
@@ -38,7 +38,7 @@ export function ArchitecturePipeline() {
             style={{ left: activeStage.truckPosition }}
             aria-hidden="true"
           >
-            🚚
+            ⚡
           </div>
         </div>
 
