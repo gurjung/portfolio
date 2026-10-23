@@ -17,10 +17,9 @@ export function HeroHeadline() {
 
       {/* Main Editorial Headline */}
       <h1 className="text-[clamp(48px,6vw,84px)] font-[850] leading-[0.93] tracking-[-0.06em] text-[var(--text-main)] mb-6">
-        From<br />
-        warehouse<br />
-        to{' '}
-        <span className="relative inline-block text-white px-2.5 pb-1 z-10">
+        {personal.headlineLine1}<br />
+        {personal.headlineLine2}<br />
+        <span className="relative inline-block text-white px-2.5 pb-1 z-10 mt-1">
           <span
             className="absolute inset-0 bg-[var(--accent-blue)] rounded-lg -z-10 -rotate-1 transform"
             aria-hidden="true"
