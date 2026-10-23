@@ -1,42 +1,42 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 const promptResponses: Record<string, string> = {
   stack:
-    "Gurjung's core production stack centers on React 19, Next.js (App Router), TypeScript, Tailwind CSS, Redux Toolkit, and TanStack Query. On the backend, he works with Node.js, Express, PostgreSQL, and Prisma.",
-  bjs:
-    "At BJS Home Delivery, Gurjung consolidated 5 disparate internal tools into a unified React platform for 2,000+ users, cutting tool-switching by 30%, automating daily operational debriefing, and shrinking JS bundle footprints by 60–75%.",
+    "Gurjung's core stack centers on React 19, Next.js (App Router), TypeScript, Tailwind CSS, Redux Toolkit, TanStack Query, and Node.js/Express. In AI & LLM engineering, he builds with LLMs, Gemini, Claude, ChatGPT, Antigravity, RAG pipelines, Vector DBs, and LangGraph.",
+  ai: "For this portfolio, Gurjung engineered an interactive AI Assistant interface powered by LLM APIs. His broader AI engineering toolkit encompasses RAG architecture, Vector DBs, and LangGraph agent orchestration.",
+  bjs: "At BJS Home Delivery, Gurjung consolidated 5 disparate internal tools into a unified React platform for 2,000+ users, cutting tool-switching by 30%, automating daily operational debriefing, and shrinking JS bundle footprints by 60–75%.",
   ccaas:
     "Gurjung engineered agent-facing interfaces on Twilio Flex and Zoom Contact Center, centralizing Calls, SMS, and WhatsApp into low-latency event streams. This directly drove a 50% reduction in customer response latency.",
   devboard:
     "DevBoard is Gurjung's multi-tenant project management platform featuring Next.js App Router, Prisma ORM, PostgreSQL, defense-in-depth RBAC, tokenized invitations, and drag-and-drop Kanban task views.",
-  hire:
-    "Gurjung brings 3+ years of battle-tested frontend systems engineering with proven business metrics (-50% latency, 2K+ daily users), rigorous TypeScript discipline, and deep expertise in scalable dashboards and design systems.",
+  hire: "Gurjung brings 3+ years of battle-tested frontend systems engineering with proven business metrics (-50% latency, 2K+ daily users), rigorous TypeScript discipline, and deep expertise in scalable dashboards and design systems.",
 };
 
 export function ContactCenterCard() {
   const [displayText, setDisplayText] = useState<string>(
-    "Hi! I'm Gurjung — AI Assistant. Ask anything about frontend architecture, state management, performance engineering, or project achievements."
+    "Hi! I'm Gurjung — AI Assistant. Ask anything about frontend architecture, state management, performance engineering, or project achievements.",
   );
   const [isTyping, setIsTyping] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>("");
   const typingTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const chips = [
-    { id: 'stack', label: '⚡ Core Tech Stack' },
-    { id: 'bjs', label: '🏗️ Enterprise Scale Impact' },
-    { id: 'ccaas', label: '🔄 Real-Time WebSockets & Telephony' },
-    { id: 'devboard', label: '💼 DevBoard SaaS Architecture' },
-    { id: 'hire', label: '⭐ Why hire Gurjung?' },
+    { id: "stack", label: "⚡ Core Tech Stack" },
+    { id: "ai", label: "🤖 AI & LLM Systems" },
+    { id: "bjs", label: "🏗️ Enterprise Scale" },
+    { id: "ccaas", label: "🔄 Real-Time WebSockets" },
+    { id: "devboard", label: "💼 DevBoard SaaS" },
+    { id: "hire", label: "⭐ Why hire Gurjung?" },
   ];
 
   const streamText = (fullText: string) => {
     if (typingTimerRef.current) clearInterval(typingTimerRef.current);
     setIsTyping(true);
-    setDisplayText('');
+    setDisplayText("");
 
-    let current = '';
+    let current = "";
     let index = 0;
     typingTimerRef.current = setInterval(() => {
       if (index < fullText.length) {
@@ -66,27 +66,57 @@ export function ContactCenterCard() {
     const query = inputValue.trim().toLowerCase();
     if (!query) return;
 
-    if (query.includes('stack') || query.includes('skill')) {
+    if (
+      query.includes("ai") ||
+      query.includes("llm") ||
+      query.includes("rag") ||
+      query.includes("vector") ||
+      query.includes("langgraph") ||
+      query.includes("gemini") ||
+      query.includes("claude") ||
+      query.includes("chatgpt") ||
+      query.includes("antigravity")
+    ) {
+      streamText(promptResponses.ai);
+    } else if (query.includes("stack") || query.includes("skill")) {
       streamText(promptResponses.stack);
-    } else if (query.includes('bjs') || query.includes('enterprise') || query.includes('scale') || query.includes('tool')) {
+    } else if (
+      query.includes("bjs") ||
+      query.includes("enterprise") ||
+      query.includes("scale") ||
+      query.includes("tool")
+    ) {
       streamText(promptResponses.bjs);
-    } else if (query.includes('ccaas') || query.includes('contact') || query.includes('twilio') || query.includes('websocket') || query.includes('telephony')) {
+    } else if (
+      query.includes("ccaas") ||
+      query.includes("contact") ||
+      query.includes("twilio") ||
+      query.includes("websocket") ||
+      query.includes("telephony")
+    ) {
       streamText(promptResponses.ccaas);
-    } else if (query.includes('devboard') || query.includes('project') || query.includes('saas')) {
+    } else if (
+      query.includes("devboard") ||
+      query.includes("project") ||
+      query.includes("saas")
+    ) {
       streamText(promptResponses.devboard);
-    } else if (query.includes('hire') || query.includes('why') || query.includes('experience')) {
+    } else if (
+      query.includes("hire") ||
+      query.includes("why") ||
+      query.includes("experience")
+    ) {
       streamText(promptResponses.hire);
     } else {
       streamText(
-        `Recorded inquiry: "${inputValue}". Gurjung specializes in sub-100ms React/Next.js architectures, real-time event interfaces, and scalable enterprise platforms. Reach him directly at gurjung997@gmail.com for deeper technical discussion.`
+        `Recorded inquiry: "${inputValue}". Gurjung specializes in sub-100ms React/Next.js architectures, real-time event interfaces, and scalable enterprise platforms. Reach him directly at gurjung997@gmail.com for deeper technical discussion.`,
       );
     }
-    setInputValue('');
+    setInputValue("");
   };
 
   return (
     <div className="bg-[#151619] text-white rounded-lg border border-[#282A30] shadow-xl p-4 flex flex-col gap-3 transition-colors duration-200">
-      
       {/* Console Top Header */}
       <div className="flex items-center justify-between border-b border-[#2B2D33] pb-2.5">
         <div className="flex items-center gap-2 text-[12px] font-extrabold text-white">
@@ -124,7 +154,11 @@ export function ContactCenterCard() {
       </div>
 
       {/* Predefined Recruiter Question Chips (Clean multi-row wrap for full mobile visibility) */}
-      <div className="flex flex-wrap gap-1.5 py-1" role="toolbar" aria-label="Quick questions">
+      <div
+        className="flex flex-wrap gap-1.5 py-1"
+        role="toolbar"
+        aria-label="Quick questions"
+      >
         {chips.map((chip) => (
           <button
             key={chip.id}

@@ -1,23 +1,25 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { portfolioData } from '@/data/portfolioData';
+import React from "react";
+import { portfolioData } from "@/data/portfolioData";
 
 export function RecruiterHubSection() {
   const { recruiterHub, personal } = portfolioData;
 
   const scrollToAiConsole = (e: React.MouseEvent) => {
     e.preventDefault();
-    const heroEl = document.getElementById('top');
+    const heroEl = document.getElementById("top");
     if (heroEl) {
-      heroEl.scrollIntoView({ behavior: 'smooth' });
+      heroEl.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section className="w-[min(1340px,calc(100%-48px))] mx-auto py-20" id="recruiter-hub">
+    <section
+      className="w-[min(1340px,calc(100%-48px))] mx-auto py-20"
+      id="recruiter-hub"
+    >
       <div className="bg-[var(--bg-card)] border-2 border-[var(--border-strong)] rounded-xl p-8 sm:p-10 shadow-[var(--card-shadow)] grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-center transition-colors duration-200">
-        
         {/* Left Column: Essential Parameters & Resume Action */}
         <div>
           <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-3">
@@ -30,7 +32,8 @@ export function RecruiterHubSection() {
           </h2>
 
           <p className="text-[14px] text-[var(--text-muted)] leading-[1.6] max-w-[520px] mb-6">
-            Evaluating Gurjung for your engineering team? Here are the essential parameters at a glance.
+            Evaluating Gurjung for your engineering team? Here are the essential
+            parameters at a glance.
           </p>
 
           {/* Recruiter Meta Grid */}
@@ -70,6 +73,15 @@ export function RecruiterHubSection() {
                 {recruiterHub.experienceLevel}
               </strong>
             </div>
+
+            <div className="bg-[var(--bg-card-subtle)] border border-[var(--border-color)] p-3 rounded-md sm:col-span-2">
+              <span className="block font-mono text-[10px] text-[var(--text-muted)] font-bold uppercase tracking-wider mb-1">
+                ACADEMIC CREDENTIALS
+              </span>
+              <strong className="text-[var(--text-main)] font-[750]">
+                {recruiterHub.education}
+              </strong>
+            </div>
           </div>
 
           {/* CTA Actions */}
@@ -97,14 +109,18 @@ export function RecruiterHubSection() {
 
         {/* Right Column: Ask AI Screening Shortcut Card */}
         <div className="bg-[var(--bg-card-subtle)] border border-[var(--border-color)] rounded-lg p-6 sm:p-7 text-center flex flex-col items-center justify-center">
-          <div className="text-[32px] text-[var(--accent-blue)] mb-2" aria-hidden="true">
+          <div
+            className="text-[32px] text-[var(--accent-blue)] mb-2"
+            aria-hidden="true"
+          >
             ✦
           </div>
           <h3 className="text-[17px] font-[850] text-[var(--text-main)] mb-2">
             Have Custom Screening Questions?
           </h3>
           <p className="text-[12.5px] text-[var(--text-muted)] leading-[1.6] max-w-[340px] mb-5">
-            Gurjung AI Assistant is trained on his full background, performance philosophy, and real architectural decisions.
+            Gurjung AI Assistant is powered by LLM API integration, answering
+            queries grounded in his architectural decisions and background.
           </p>
           <a
             href="#top"
@@ -115,7 +131,6 @@ export function RecruiterHubSection() {
             <span>↑</span>
           </a>
         </div>
-
       </div>
     </section>
   );

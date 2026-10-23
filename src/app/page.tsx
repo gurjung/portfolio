@@ -4,14 +4,13 @@ import { TechTicker } from "@/components/TechTicker";
 import { ImpactLedger } from "@/components/ImpactLedger";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { ArchitecturePipeline } from "@/components/pipeline/ArchitecturePipeline";
-import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { SkillsSection } from "@/components/skills/SkillsSection";
 import { RecruiterHubSection } from "@/components/recruiter/RecruiterHubSection";
 import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[var(--bg-page)] text-[var(--text-main)] transition-colors duration-200">
+    <div className="relative min-h-screen overflow-x-clip bg-[var(--bg-page)] text-[var(--text-main)] transition-colors duration-200">
       <Header />
       <main className="flex min-h-screen flex-col">
         <HeroSection />
@@ -19,7 +18,6 @@ export default function HomePage() {
         <ImpactLedger />
         <ProjectsSection />
         <ArchitecturePipeline />
-        <ExperienceSection />
         <SkillsSection />
         <RecruiterHubSection />
       </main>

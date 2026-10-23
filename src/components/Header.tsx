@@ -13,7 +13,6 @@ export function Header() {
     { label: 'Work', href: '#work' },
     { label: 'Impact', href: '#impact' },
     { label: 'Pipeline', href: '#pipeline' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Resume', href: '#recruiter-hub' },
   ];
