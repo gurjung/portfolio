@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { SonarDot } from "../common/SonarDot";
 
 interface Message {
   id: string;
@@ -196,7 +197,8 @@ export function ContactCenterCard() {
       {/* Console Top Header */}
       <div className="flex items-center justify-between border-b border-[#2B2D33] pb-2.5">
         <div className="flex items-center gap-2 text-[12px] font-extrabold text-white">
-          <span className="bg-[var(--accent-green)] text-black text-[9px] font-mono px-1.5 py-0.5 rounded font-extrabold uppercase">
+          <span className="bg-[#18261e] border border-[var(--accent-green)]/40 text-[var(--accent-green)] text-[9.5px] font-mono px-2 py-0.5 rounded font-extrabold uppercase flex items-center gap-1.5 shadow-sm">
+            <SonarDot size={5} color="var(--accent-green)" />
             LIVE
           </span>
           <span>AI ASSISTANT</span>

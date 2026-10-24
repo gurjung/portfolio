@@ -17,6 +17,21 @@ export function LogisticsRouteMap() {
 
       {/* Stylized SVG Map Container */}
       <div className="bg-[var(--bg-card-subtle)] rounded-md relative p-2 sm:p-4 lg:p-5 min-h-[230px] sm:h-[260px] lg:h-[310px] flex flex-col justify-between overflow-hidden">
+        {/* Style tag for streaming dashed line animation */}
+        <style jsx>{`
+          @keyframes streamFlow {
+            from {
+              stroke-dashoffset: 28;
+            }
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          .data-stream-path {
+            animation: streamFlow 1.4s linear infinite;
+          }
+        `}</style>
+
         <svg
           className="w-full h-[150px] sm:h-[180px] lg:h-[220px]"
           viewBox="0 0 760 190"
@@ -28,19 +43,52 @@ export function LogisticsRouteMap() {
             <pattern id="routeGrid" width="30" height="30" patternUnits="userSpaceOnUse">
               <path d="M 30 0 L 0 0 0 30" fill="none" stroke="currentColor" strokeOpacity="0.06" strokeWidth="1" />
             </pattern>
+
+            {/* Glowing filter for high-speed data packets */}
+            <filter id="packetGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
           </defs>
           <rect width="100%" height="100%" fill="url(#routeGrid)" />
 
-          {/* Dotted Supply Chain Line flowing across top and arcing to bottom right */}
+          {/* Dotted Supply Chain Line flowing continuously */}
           <path
             d="M 130 50 C 250 50, 320 90, 430 90 S 560 140, 680 140"
             stroke="var(--accent-blue)"
             strokeWidth="3.5"
             strokeDasharray="7 7"
             fill="none"
+            className="data-stream-path"
           />
 
-          {/* Point 1: Complex Logic */}
+          {/* Traveling Data Packet 1 (Bright Lime Photon) */}
+          <circle r="4.5" fill="var(--accent-lime)" filter="url(#packetGlow)">
+            <animateMotion
+              path="M 130 50 C 250 50, 320 90, 430 90 S 560 140, 680 140"
+              dur="2.8s"
+              repeatCount="indefinite"
+            />
+          </circle>
+
+          {/* Traveling Data Packet 2 (Trailing White/Cyan Photon) */}
+          <circle r="3.5" fill="#67E8F9" filter="url(#packetGlow)">
+            <animateMotion
+              path="M 130 50 C 250 50, 320 90, 430 90 S 560 140, 680 140"
+              dur="2.8s"
+              begin="1.4s"
+              repeatCount="indefinite"
+            />
+          </circle>
+
+          {/* Point 1: Complex Logic with concentric radar ripple */}
+          <circle cx="130" cy="50" r="10" fill="none" stroke="var(--accent-blue)" strokeWidth="1.5">
+            <animate attributeName="r" values="9;22" dur="2.4s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0" dur="2.4s" repeatCount="indefinite" />
+          </circle>
           <circle cx="130" cy="50" r="9" fill="var(--bg-card)" stroke="var(--accent-blue)" strokeWidth="3" />
           <text
             x="65"
@@ -53,7 +101,11 @@ export function LogisticsRouteMap() {
             ● COMPLEX LOGIC
           </text>
 
-          {/* Point 2: Real-time Sync */}
+          {/* Point 2: Real-time Sync with concentric radar ripple */}
+          <circle cx="430" cy="90" r="9" fill="none" stroke="var(--accent-orange)" strokeWidth="1.5">
+            <animate attributeName="r" values="8;20" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+          </circle>
           <circle cx="430" cy="90" r="8" fill="var(--accent-orange)" stroke="#FFFFFF" strokeWidth="2.5" />
           <text
             x="370"
@@ -66,7 +118,11 @@ export function LogisticsRouteMap() {
             ● REAL-TIME SYNC
           </text>
 
-          {/* Point 3: Seamless UI */}
+          {/* Point 3: Seamless UI with concentric radar ripple */}
+          <circle cx="680" cy="140" r="10" fill="none" stroke="var(--accent-blue)" strokeWidth="1.5">
+            <animate attributeName="r" values="9;22" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
+          </circle>
           <circle cx="680" cy="140" r="9" fill="var(--bg-card)" stroke="var(--accent-blue)" strokeWidth="3" />
           <text
             x="605"

@@ -39,6 +39,7 @@ html[data-theme="paper"] {
   --accent-orange: #ff6847;
   --accent-green: #22c55e;
   --card-shadow: 6px 6px 0px #d9d5cc;
+  --card-spotlight: rgba(180, 83, 9, 0.05);
 }
 
 html[data-theme="carbon"] {
@@ -55,6 +56,7 @@ html[data-theme="carbon"] {
   --accent-orange: #f97316;
   --accent-green: #10b981;
   --card-shadow: 6px 6px 0px #060709;
+  --card-spotlight: rgba(59, 130, 246, 0.16);
 }
 
 html[data-theme="swiss"] {
@@ -71,6 +73,7 @@ html[data-theme="swiss"] {
   --accent-orange: #ea580c;
   --accent-green: #16a34a;
   --card-shadow: 6px 6px 0px #e5e7eb;
+  --card-spotlight: rgba(2, 132, 199, 0.05);
 }
 
 /* ==========================================================================
@@ -102,6 +105,17 @@ body {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes sonarPing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
   }
 }
 

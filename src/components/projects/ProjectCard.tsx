@@ -4,11 +4,32 @@ import React from 'react';
 import { Project } from '@/data/portfolioData';
 
 export function ProjectCard({ project }: { project: Project }) {
+  const cardRef = React.useRef<HTMLElement | null>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    cardRef.current.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+    cardRef.current.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+  };
+
   return (
-    <article className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-5 sm:p-7 shadow-[var(--card-shadow)] flex flex-col justify-between hover:border-[var(--border-strong)] hover:-translate-y-1 transition-all duration-200">
-      
+    <article
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="group relative bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg p-5 sm:p-7 shadow-[var(--card-shadow)] flex flex-col justify-between hover:border-[var(--accent-blue)]/60 hover:-translate-y-1 transition-all duration-200 overflow-hidden"
+    >
+      {/* Interactive Cursor Spotlight Glow */}
+      <div
+        className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+        style={{
+          background: `radial-gradient(420px circle at var(--mouse-x, -100px) var(--mouse-y, -100px), var(--card-spotlight), transparent 75%)`,
+        }}
+        aria-hidden="true"
+      />
+
       {/* Top Details */}
-      <div className="mb-5">
+      <div className="relative z-10 mb-5">
         {/* Category & Client Tag Row */}
         <div className="flex flex-wrap sm:flex-nowrap items-start sm:items-center justify-between gap-2 mb-4">
           <span className="bg-[rgba(36,76,255,0.1)] border border-[rgba(36,76,255,0.25)] text-[var(--accent-blue)] px-2.5 py-1 rounded text-[10px] font-mono font-bold tracking-wider uppercase">
@@ -52,7 +73,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Bottom Metrics & Action */}
-      <div className="flex items-center justify-between border-t border-[var(--border-color)] pt-4 mt-auto">
+      <div className="relative z-10 flex items-center justify-between border-t border-[var(--border-color)] pt-4 mt-auto">
         <div className="flex items-center gap-5 sm:gap-6 flex-wrap">
           {project.metrics.map((metric, idx) => (
             <div key={idx}>
@@ -68,7 +89,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         <div
           aria-hidden="true"
-          className="w-9 h-9 rounded-full bg-[var(--border-strong)] text-[var(--bg-card)] flex items-center justify-center text-sm font-bold shrink-0 hover:bg-[var(--accent-blue)] hover:text-white transition-colors duration-150"
+          className="w-9 h-9 rounded-full bg-[var(--border-strong)] text-[var(--bg-card)] flex items-center justify-center text-sm font-bold shrink-0 group-hover:bg-[var(--accent-blue)] group-hover:text-white transition-colors duration-200"
         >
           →
         </div>

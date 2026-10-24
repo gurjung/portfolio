@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { portfolioData } from "@/data/portfolioData";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { SonarDot } from "./common/SonarDot";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,8 +33,8 @@ export function Header() {
             </span>
           </Link>
 
-          <div className="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-[rgba(34,197,94,0.12)] text-[var(--accent-green)] border border-[rgba(34,197,94,0.3)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-green)] animate-pulse" />
+          <div className="hidden lg:inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-[rgba(34,197,94,0.12)] text-[var(--accent-green)] border border-[rgba(34,197,94,0.3)] shadow-sm">
+            <SonarDot size={7} color="var(--accent-green)" />
             <span>{personal.statusBadge}</span>
           </div>
         </div>
@@ -93,7 +94,7 @@ export function Header() {
           ))}
           <div className="pt-3 border-t border-[var(--border-color)] flex flex-col gap-2 text-xs font-mono text-[var(--text-muted)]">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-green)] shrink-0 animate-pulse" />
+              <SonarDot size={7} color="var(--accent-green)" />
               <span>{personal.statusBadge}</span>
             </div>
             <a
