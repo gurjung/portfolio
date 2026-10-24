@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FiMail, FiArrowRight } from 'react-icons/fi';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { portfolioData } from '@/data/portfolioData';
 
 export function HeroHeadline() {
@@ -42,8 +43,8 @@ export function HeroHeadline() {
         {personal.intro}
       </p>
 
-      {/* CTA Buttons */}
-      <div className="flex items-center justify-center lg:justify-start gap-3.5 flex-wrap">
+      {/* CTA Buttons & Social Links */}
+      <div className="flex items-center justify-center lg:justify-start gap-3 flex-wrap">
         <a
           href="#work"
           className="inline-flex items-center gap-2.5 px-5 py-3 rounded-md text-[13px] font-[750] bg-[var(--border-strong)] text-[var(--bg-card)] border border-[var(--border-strong)] hover:bg-[var(--accent-blue)] hover:border-[var(--accent-blue)] hover:text-white hover:-translate-y-0.5 transition-all duration-200"
@@ -59,6 +60,30 @@ export function HeroHeadline() {
           <span>Get in touch</span>
           <FiMail className="w-5 h-5 shrink-0 text-[var(--accent-blue)]" />
         </a>
+
+        {personal.links.github && (
+          <a
+            href={personal.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+            className="inline-flex items-center justify-center w-[44px] h-[44px] rounded-md bg-[var(--bg-card)] text-[var(--text-main)] border border-[var(--border-color)] hover:border-[var(--accent-blue)] hover:text-[var(--accent-blue)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          >
+            <FaGithub className="w-[19px] h-[19px]" />
+          </a>
+        )}
+
+        {personal.links.linkedin && (
+          <a
+            href={personal.links.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+            className="inline-flex items-center justify-center w-[44px] h-[44px] rounded-md bg-[var(--bg-card)] text-[var(--text-main)] border border-[var(--border-color)] hover:border-[var(--accent-blue)] hover:text-[var(--accent-blue)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          >
+            <FaLinkedinIn className="w-[19px] h-[19px]" />
+          </a>
+        )}
       </div>
     </div>
   );
