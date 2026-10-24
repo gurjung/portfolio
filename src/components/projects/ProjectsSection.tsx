@@ -18,7 +18,7 @@ export function ProjectsSection() {
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
           <span>FEATURED PROJECTS</span>
         </div>
-        <h2 className="text-[clamp(28px,4vw,48px)] font-[850] tracking-[-0.05em] text-[var(--text-main)] leading-tight">
+        <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
           Real Products. Measurable Impact.
         </h2>
       </div>

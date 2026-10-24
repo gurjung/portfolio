@@ -143,7 +143,7 @@ export function SkillsSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)]" />
               <span>TECHNICAL ARSENAL</span>
             </div>
-            <h2 className="text-[24px] sm:text-[28px] lg:text-[30px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-[850] tracking-[-0.04em] text-[var(--text-main)] leading-tight">
               Tools of the Trade &amp; Engineering Standards
             </h2>
           </div>

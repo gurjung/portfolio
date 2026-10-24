@@ -28,7 +28,7 @@ export function RecruiterHubSection() {
             <span>HR &amp; TALENT ACQUISITION CONSOLE</span>
           </div>
 
-          <h2 className="text-[26px] sm:text-[32px] lg:text-[34px] font-[850] tracking-[-0.04em] text-[var(--text-main)] mb-3 leading-tight">
+          <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-[850] tracking-[-0.04em] text-[var(--text-main)] mb-3 leading-tight">
             The One-Stop Recruiter Snapshot
           </h2>
 

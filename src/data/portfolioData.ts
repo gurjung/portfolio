@@ -29,8 +29,8 @@ export const portfolioData = {
     roleTag: "FRONTEND ENGINEER // REACT // NEXT.JS // TYPESCRIPT",
     eyebrow:
       "SCALABLE WEB ARCHITECTURE · REAL-TIME SYSTEMS · AI & LLM INTEGRATION",
-    headlineLine1: "Engineered",
-    headlineLine2: "for scale,",
+    headlineLine1: "Engineered for scale,",
+    headlineLine2: "",
     headlineAccent: "crafted for speed.",
     intro:
       "I'm Gurjung Singh, a Frontend Engineer passionate about building deterministic, high-performance web applications, real-time event interfaces, accessible design systems, and modern AI-driven interfaces (integrating LLM APIs, with workflows extending across RAG, Vector DBs, and LangGraph) that scale to thousands of daily users.",
