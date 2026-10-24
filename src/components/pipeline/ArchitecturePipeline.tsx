@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { portfolioData, PipelineStage } from '@/data/portfolioData';
+import { LogisticsRouteMap } from '../hero/LogisticsRouteMap';
 
 export function ArchitecturePipeline() {
   const { interactivePipeline } = portfolioData;
@@ -28,6 +29,11 @@ export function ArchitecturePipeline() {
           <span className="font-mono text-[11px] font-bold text-[var(--text-muted)]">
             [CLICK ANY WAYPOINT TO TEST FLOW]
           </span>
+        </div>
+
+        {/* Dynamic Architecture Data Flow Canvas */}
+        <div className="mb-6">
+          <LogisticsRouteMap />
         </div>
 
         {/* Highway Track with Moving Speed Pulse */}
