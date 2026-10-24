@@ -22,7 +22,7 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[var(--bg-page)]/90 border-b border-[var(--border-color)] transition-colors duration-200">
-        <div className="w-[min(1340px,calc(100%-48px))] mx-auto h-20 flex items-center justify-between gap-4">
+        <div className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
           {/* Brand Logo & Live Status */}
           <div className="flex items-center gap-4">
             <Link

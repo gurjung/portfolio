@@ -2,20 +2,13 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { SonarDot } from "../common/SonarDot";
-import {
-  Message,
-  promptResponses,
-  INITIAL_MESSAGES,
-  AI_CHIPS,
-  resolveQueryResponse,
-} from "./aiAssistantData";
+import { promptResponses, AI_CHIPS } from "./aiAssistantData";
 import { ChatMessageList } from "./ChatMessageList";
+import { useGeminiChatStream } from "@/hooks/useGeminiChatStream";
 
 export function ContactCenterCard() {
-  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
-  const [isTyping, setIsTyping] = useState<boolean>(false);
+  const { messages, isTyping, sendMessage, resetChat } = useGeminiChatStream();
   const [inputValue, setInputValue] = useState<string>("");
-  const typingTimerRef = useRef<NodeJS.Timeout | null>(null);
   const chatContainerRef = useRef<HTMLDivElement | null>(null);
 
   // Auto-scroll ONLY the chat box container, preventing the browser window from jumping down
@@ -23,59 +16,16 @@ export function ContactCenterCard() {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTo({
         top: chatContainerRef.current.scrollHeight,
-        behavior: "smooth",
+        behavior: isTyping ? "auto" : "smooth",
       });
     }
   }, [messages, isTyping]);
-
-  useEffect(() => {
-    return () => {
-      if (typingTimerRef.current) clearInterval(typingTimerRef.current);
-    };
-  }, []);
-
-  const streamResponse = (userPrompt: string, fullResponse: string) => {
-    if (typingTimerRef.current) clearInterval(typingTimerRef.current);
-
-    const userMessage: Message = {
-      id: `user-${Date.now()}`,
-      role: "user",
-      content: userPrompt,
-    };
-
-    const aiMessageId = `ai-${Date.now()}`;
-    const initialAiMessage: Message = {
-      id: aiMessageId,
-      role: "assistant",
-      content: "",
-    };
-
-    setMessages((prev) => [...prev, userMessage, initialAiMessage]);
-    setIsTyping(true);
-
-    let charIndex = 0;
-    typingTimerRef.current = setInterval(() => {
-      charIndex += 2;
-      const currentSlice = fullResponse.slice(0, charIndex);
-
-      setMessages((prev) =>
-        prev.map((msg) =>
-          msg.id === aiMessageId ? { ...msg, content: currentSlice } : msg
-        )
-      );
-
-      if (charIndex >= fullResponse.length) {
-        if (typingTimerRef.current) clearInterval(typingTimerRef.current);
-        setIsTyping(false);
-      }
-    }, 18);
-  };
 
   const handleChipClick = (id: string) => {
     if (isTyping) return;
     const entry = promptResponses[id];
     if (entry) {
-      streamResponse(entry.prompt, entry.response);
+      sendMessage(entry.prompt);
     }
   };
 
@@ -85,19 +35,12 @@ export function ContactCenterCard() {
     const query = inputValue.trim();
     if (!query) return;
 
-    const responseText = resolveQueryResponse(query);
-    streamResponse(query, responseText);
+    sendMessage(query);
     setInputValue("");
   };
 
-  const handleReset = () => {
-    if (typingTimerRef.current) clearInterval(typingTimerRef.current);
-    setIsTyping(false);
-    setMessages(INITIAL_MESSAGES);
-  };
-
   return (
-    <div className="bg-[#151619] text-white rounded-lg border border-[#282A30] shadow-xl p-4 flex flex-col gap-3 transition-colors duration-200">
+    <div className="bg-[#151619] text-white rounded-lg border border-[#282A30] shadow-xl p-3.5 sm:p-4 flex flex-col gap-3 transition-colors duration-200 w-full min-w-0">
       {/* Console Top Header */}
       <div className="flex items-center justify-between border-b border-[#2B2D33] pb-2.5">
         <div className="flex items-center gap-2 text-[12px] font-extrabold text-white">
@@ -113,7 +56,7 @@ export function ContactCenterCard() {
           {messages.length > 1 && (
             <button
               type="button"
-              onClick={handleReset}
+              onClick={resetChat}
               className="text-[10px] font-mono text-slate-400 hover:text-white transition-colors cursor-pointer"
               title="Reset conversation"
             >

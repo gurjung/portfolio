@@ -9,7 +9,7 @@ export function ProjectsSection() {
 
   return (
     <section
-      className="w-[min(1340px,calc(100%-48px))] mx-auto py-20 scroll-mt-20"
+      className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-20 scroll-mt-20"
       id="work"
     >
       {/* Section Header */}

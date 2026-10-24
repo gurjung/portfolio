@@ -38,7 +38,7 @@ export function ImpactLedger() {
   return (
     <section
       ref={sectionRef}
-      className="w-[min(1340px,calc(100%-48px))] mx-auto py-14 border-b border-[var(--border-color)] transition-colors duration-200 scroll-mt-20"
+      className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-14 border-b border-[var(--border-color)] transition-colors duration-200 scroll-mt-20"
       id="impact"
     >
       {/* Section Eyebrow with Replay Button */}

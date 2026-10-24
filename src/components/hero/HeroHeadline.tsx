@@ -39,7 +39,7 @@ export function HeroHeadline() {
       </h1>
 
       {/* Intro Description */}
-      <p className="text-[16px] leading-[1.65] text-[var(--text-muted)] max-w-[540px] mb-8 font-normal mx-auto lg:mx-0">
+      <p className="text-[16px] leading-[1.65] text-[var(--text-muted)] max-w-[640px] lg:max-w-none mb-8 font-normal mx-auto lg:mx-0">
         {personal.intro}
       </p>
 

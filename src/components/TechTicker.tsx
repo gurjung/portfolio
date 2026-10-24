@@ -14,7 +14,7 @@ export function TechTicker() {
       </div>
 
       {/* Infinite Scrolling Ticker Track */}
-      <div className="flex overflow-hidden whitespace-nowrap py-1">
+      <div className="flex-1 min-w-0 flex overflow-hidden whitespace-nowrap py-1">
         <div className="flex shrink-0 animate-[marquee_28s_linear_infinite] gap-7 pl-5 text-[12px] font-bold font-mono text-slate-200">
           {tickerTechnologies.map((tech, idx) => (
             <span key={`tech-1-${idx}`} className="inline-flex items-center gap-7">

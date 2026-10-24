@@ -80,7 +80,7 @@ export function SkillsSection() {
 
   return (
     <section className="w-full py-16 bg-[var(--bg-card-subtle)] border-y border-[var(--border-color)] transition-colors duration-200 scroll-mt-20" id="skills">
-      <div className="w-[min(1340px,calc(100%-32px))] sm:w-[min(1340px,calc(100%-48px))] mx-auto">
+      <div className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Dynamic Constellation Status Pill */}
         <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-left gap-4 mb-8">

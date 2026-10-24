@@ -17,7 +17,7 @@ export function RecruiterHubSection() {
 
   return (
     <section
-      className="w-[min(1340px,calc(100%-32px))] sm:w-[min(1340px,calc(100%-48px))] mx-auto py-16 sm:py-20 scroll-mt-20"
+      className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 scroll-mt-20"
       id="recruiter-hub"
     >
       <div className="bg-[var(--bg-card)] border-2 border-[var(--border-strong)] rounded-xl p-5 sm:p-8 lg:p-10 shadow-[var(--card-shadow)] grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-10 items-center transition-colors duration-200">

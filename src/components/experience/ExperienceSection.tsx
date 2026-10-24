@@ -7,7 +7,7 @@ export function ExperienceSection() {
   const { careerExperience, education } = portfolioData;
 
   return (
-    <section className="w-[min(1340px,calc(100%-48px))] mx-auto py-20" id="experience">
+    <section className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-20" id="experience">
       {/* Section Eyebrow & Title */}
       <div className="mb-10">
         <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-[var(--text-muted)] tracking-wider uppercase mb-3">

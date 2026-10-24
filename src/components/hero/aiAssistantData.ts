@@ -106,5 +106,6 @@ export function resolveQueryResponse(query: string): string {
     return promptResponses.hire.response;
   }
 
-  return `Recorded inquiry: "${query}". Gurjung specializes in sub-100ms React/Next.js architectures, real-time event interfaces, and scalable enterprise platforms. Reach him directly at gurjung997@gmail.com for deeper technical discussion.`;
+  return `Recorded inquiry: "${query}". Gurjung specializes in sub-100ms React/Next.js architectures, real-time event interfaces, and scalable enterprise platforms. Reach him directly at **gurjung997@gmail.com** for deeper technical discussion.`;
 }
+

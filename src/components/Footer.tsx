@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t border-[var(--border-color)] py-10 bg-[var(--bg-page)] text-[var(--text-muted)] text-[12px] transition-colors duration-200">
-      <div className="w-[min(1340px,calc(100%-48px))] mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
+      <div className="w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
         {/* Left Signature */}
         <div>
           <strong className="text-[var(--text-main)] font-[800]">
